@@ -1,7 +1,7 @@
 import React from "react";
 import { TFunction } from "next-i18next";
 
-import { withTranslation, i18n } from "@i18n";
+import { withTranslation, i18n } from "next-i18next";
 
 /**
  * This component is generated as en example usage of next-i18next
@@ -12,7 +12,7 @@ import { withTranslation, i18n } from "@i18n";
 
 const I18NExampleComponent: React.FC<{ t: TFunction }> = ({ t }) => {
   const changeLanguage = () => {
-    i18n.changeLanguage(i18n.language === "tr" ? "en" : "tr");
+    i18n?.changeLanguage(i18n?.language === "tr" ? "en" : "tr");
   };
   return (
     <div>

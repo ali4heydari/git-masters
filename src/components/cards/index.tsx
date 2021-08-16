@@ -1,6 +1,7 @@
 import React from "react";
 
 import data from "@public/meta.json";
+import { I18NExample } from '@components/examples/translate';
 
 export const Cards: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ export const Cards: React.FC = () => {
           </div>
         ))}
       </div>
+      <I18NExample/>
     </div>
   );
 };

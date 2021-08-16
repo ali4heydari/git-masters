@@ -17,9 +17,9 @@ const jokesApi = axios.create({
 });
 
 export const AxiosExample = () => {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>([]);
 
   // Note: the empty deps array [] means
   // this useEffect will run once
@@ -46,7 +46,7 @@ export const AxiosExample = () => {
   }, []);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error?.message}</div>;
   }
 
   if (!isLoaded) {
@@ -59,9 +59,9 @@ export const AxiosExample = () => {
         <h2>Fetch Data Fetching Example</h2>
       </header>
       <main data-testid="joke-container">
-        <p>Programmer Jokes {`#${data[0].id}`}</p>
-        <p>{data[0].setup}</p>
-        <p>{data[0].punchline}</p>
+        <p>Programmer Jokes {`#${data?.[0]?.id}`}</p>
+        <p>{data?.[0]?.setup}</p>
+        <p>{data?.[0]?.punchline}</p>
       </main>
       <footer>
         <a
