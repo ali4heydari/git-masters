@@ -28,6 +28,35 @@ export const Meta: React.FC = () => {
         href="/favicon/safari-pinned-tab.svg"
         color="#000000"
       />
+      <link
+        rel="preload"
+        href="https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css"
+        as="script"
+      />
+      <link
+        rel="preload"
+        href="https://unpkg.com/prismjs@0.0.1/themes/prism-coy.css"
+        as="script"
+      />
+      <link
+        rel="preload"
+        href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
+        as="script"
+      />
+      <link
+        rel="preload"
+        href="https://unpkg.com/prismjs@0.0.1/themes/prism-funky.css"
+        as="script"
+      />
+      <link
+        href={`https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css`}
+        rel="stylesheet"
+      />
+      {/* https://github.com/leerob/nextjs-prism-markdown */}
+      {/*<link*/}
+      {/*  href={`https://unpkg.com/prismjs@0.0.1/themes/prism-${theme}.css`}*/}
+      {/*  rel="stylesheet"*/}
+      {/*/>*/}
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
