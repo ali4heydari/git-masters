@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useMemo } from "react";
+import Link from "next/link";
+import { SITE_NAME } from "../../lib/constants";
 
 export const Header: React.FC = () => {
+  const navLinks = useMemo(
+    () => [
+      {
+        text: "Syllabus",
+        href: "/syllabus",
+      },
+      {
+        text: "Schedule",
+        href: "/schedule",
+      },
+      {
+        text: "Assignments",
+        href: "/assignments",
+      },
+      {
+        text: "Lectures",
+        href: "/lectures",
+      },
+      {
+        text: "Course materials",
+        href: "/course-materials",
+      },
+    ],
+    []
+  );
+
   return (
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -17,15 +45,14 @@ export const Header: React.FC = () => {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
-          <span className="ml-3 text-xl">Tailblocks</span>
+          <span className="ml-3 text-xl">{SITE_NAME}</span>
         </a>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900">Syllabus</a>
-          <a className="mr-5 hover:text-gray-900">Schedule</a>
-          <a className="mr-5 hover:text-gray-900">Assignments</a>
-          <a className="mr-5 hover:text-gray-900">Lectures</a>
-          <a className="mr-5 hover:text-gray-900">Final project</a>
-          <a className="mr-5 hover:text-gray-900">Course materials</a>
+          {navLinks.map((it) => (
+            <Link href={it.href} key={it.href}>
+              <a className="mr-5 hover:text-gray-900">{it.text}</a>
+            </Link>
+          ))}
         </nav>
         <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
           Button
