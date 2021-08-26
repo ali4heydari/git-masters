@@ -26,6 +26,8 @@
       "@interfaces": ["src/interfaces"],
       "@styles/*": ["src/styles/*"],
       "@styles": ["src/styles"],
+      "@lib": ["src/lib"],
+      "@lib/*": ["src/lib/*"],
       "@components/icons/*": ["src/components/icons/*"],
       "@components/icons": ["src/components/icons"],
       "@redux/*": ["src/redux/*"],
