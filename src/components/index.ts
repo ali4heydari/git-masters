@@ -7,3 +7,4 @@ export { Footer } from "./footer";
 export { Container } from "./container";
 export { Statistics } from "./statistics";
 export { Testimonial } from "./testimonial";
+export { Layout } from "./layout";
