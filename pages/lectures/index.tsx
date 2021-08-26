@@ -1,12 +1,23 @@
 import Link from "next/link";
-import { Container, Layout } from "@components";
-import distanceToNow from "../../src/lib/dateRelative";
-import { getAllPosts } from "../../src/lib/api";
+import { Layout } from "@components";
+import distanceToNow from "@lib/dateRelative";
+import { getAllPosts } from "@lib/api";
+import React from "react";
 
 export default function NotePage({ allLectures }) {
   return (
     <Layout>
       <section className="text-gray-600 body-font overflow-hidden">
+        <div className="flex flex-col text-center w-full mt-20">
+          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
+            Lectures
+          </h1>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            Banh mi cornhole echo park skateboard authentic crucifix neutra
+            tilde lyft biodiesel artisan direct trade mumblecore 3 wolf moon
+            twee
+          </p>
+        </div>
         <div className="container px-5 py-24 mx-auto">
           <div className="-my-8 divide-y-2 divide-gray-100">
             {allLectures.length ? (
