@@ -7,6 +7,10 @@ export const Header: React.FC = () => {
   const navLinks = useMemo(
     () => [
       {
+        text: "Home",
+        href: PUBLIC_URL,
+      },
+      {
         text: "Syllabus",
         href: "/syllabus",
       },
@@ -25,6 +29,10 @@ export const Header: React.FC = () => {
       {
         text: "Course materials",
         href: "/course-materials",
+      },
+      {
+        text: "Participants",
+        href: "/participants",
       },
     ],
     []
