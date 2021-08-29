@@ -14,8 +14,27 @@ export function getItemSlugs(directoryPath: string) {
   return fs.readdirSync(directoryPath);
 }
 
-type Lecture = { slug?: string; content?: string; [key: string]: any };
-type Participant = {
+export interface IMarkdownItem {
+  slug?: string;
+  content?: string;
+  [key: string]: any;
+}
+
+export interface Lecture {
+  slug?: string;
+  content?: string;
+  title: string;
+  excerpt: string;
+  coverImage: string;
+  date: string;
+  author: string;
+  name: string;
+  picture: string;
+  ogImage: string;
+  url: string;
+}
+
+export interface Participant {
   slug?: string;
   content?: string;
   firstName: string;
@@ -23,9 +42,9 @@ type Participant = {
   githubUserName?: string;
   twitterUserName?: string;
   rate?: number;
-};
+}
 
-export function getItemBySlug<TItem>(
+export function getItemBySlug<TItem extends IMarkdownItem>(
   slug: string,
   fields: (keyof TItem)[] = [],
   directoryPath: string
@@ -41,13 +60,17 @@ export function getItemBySlug<TItem>(
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
+      // @ts-ignore
       items[field] = realSlug;
     }
     if (field === "content") {
+      // @ts-ignore
       items[field] = content;
     }
 
+    // @ts-ignore
     if (data[field]) {
+      // @ts-ignore
       items[field] = data[field];
     }
   });
