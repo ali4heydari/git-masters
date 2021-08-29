@@ -4,19 +4,39 @@ import matter from "gray-matter";
 
 const lecturesDirectory = join(process.cwd(), "_markdowns", "_lectures");
 
-export function getPostSlugs() {
-  return fs.readdirSync(lecturesDirectory);
+const participantsDirectory = join(
+  process.cwd(),
+  "_markdowns",
+  "_participants"
+);
+
+export function getItemSlugs(directoryPath: string) {
+  return fs.readdirSync(directoryPath);
 }
 
-type Post = { slug?: string; content?: string; [key: string]: any };
+type Lecture = { slug?: string; content?: string; [key: string]: any };
+type Participant = {
+  slug?: string;
+  content?: string;
+  firstName: string;
+  lastName: string;
+  githubUserName?: string;
+  twitterUserName?: string;
+  rate?: number;
+};
 
-export function getPostBySlug(slug: string, fields: string[] = []): Post {
+export function getItemBySlug<TItem>(
+  slug: string,
+  fields: (keyof TItem)[] = [],
+  directoryPath: string
+): TItem {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(lecturesDirectory, `${realSlug}.md`);
+  const fullPath = join(directoryPath, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const items: Post = {};
+  // @ts-ignore
+  const items: TItem = {};
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
@@ -35,13 +55,30 @@ export function getPostBySlug(slug: string, fields: string[] = []): Post {
   return items;
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs();
+export function getAllItems<TItem>(
+  directoryPath: string,
+  fields: (keyof TItem)[] = [],
+  compareFn?: (a: TItem, b: TItem) => number
+) {
+  const slugs = getItemSlugs(directoryPath);
 
   return (
     slugs
-      .map((slug) => getPostBySlug(slug, fields))
+      .map((slug) => getItemBySlug<TItem>(slug, fields, directoryPath))
       // sort posts by date in descending order
-      .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+      .sort(compareFn)
   );
 }
+
+export const getAllLectures = (fields: (keyof Lecture)[] = []) =>
+  getAllItems<Lecture>(lecturesDirectory, fields, (lecture1, lecture2) =>
+    lecture1.date > lecture2.date ? -1 : 1
+  );
+
+export const getAllParticipants = (fields: (keyof Participant)[] = []) =>
+  getAllItems<Participant>(
+    participantsDirectory,
+    fields,
+    (participant1, participant2) =>
+      participant1.lastName > participant2.lastName ? -1 : 1
+  );
