@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import Link from "next/link";
-import { PUBLIC_URL, SITE_NAME } from "../../lib/constants";
+import { PUBLIC_URL, SITE_NAME } from "@lib/constants";
 import { GitLogo } from "@components/icons";
+import { ActiveLink } from "@components/activeLink";
 
 export const Header: React.FC = () => {
   const navLinks = useMemo(
@@ -47,25 +47,17 @@ export const Header: React.FC = () => {
         </a>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {navLinks.map((it) => (
-            <Link href={it.href} key={it.href}>
-              <a className="mr-5 hover:text-gray-900">{it.text}</a>
-            </Link>
+            <ActiveLink
+              activeClassName={
+                "bg-red-200 rounded border-2 border-red-400 font-bold"
+              }
+              href={it.href}
+              key={it.href}
+            >
+              <a className="p-2 hover:text-gray-900">{it.text}</a>
+            </ActiveLink>
           ))}
         </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-          Button
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </button>
       </div>
     </header>
   );
