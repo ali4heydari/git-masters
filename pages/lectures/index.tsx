@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Layout } from "@components";
 import distanceToNow from "@lib/dateRelative";
-import { getAllPosts } from "@lib/api";
+import { getAllLectures, Lecture } from "@lib/api";
 import React from "react";
 
-export default function NotePage({ allLectures }) {
+const Lectures: React.FC<{ allLectures: Lecture[] }> = ({ allLectures }) => {
   return (
     <Layout>
       <section className="text-gray-600 body-font overflow-hidden">
@@ -70,10 +70,12 @@ export default function NotePage({ allLectures }) {
       </section>
     </Layout>
   );
-}
+};
+
+export default Lectures;
 
 export async function getStaticProps() {
-  const allLectures = getAllPosts(["slug", "title", "excerpt", "date"]);
+  const allLectures = getAllLectures(["slug", "title", "excerpt", "date"]);
 
   return {
     props: { allLectures },

@@ -3,7 +3,7 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 import { Container, Layout } from "@components";
 import markdownToHtml from "../../src/lib/markdownToHtml";
-import { getAllPosts, getPostBySlug } from "../../src/lib/api";
+import { getAllLectures, getItemBySlug } from "../../src/lib/api";
 import { SITE_NAME } from "../../src/lib/constants";
 
 export default function Post({ post, morePosts, preview }) {
@@ -93,7 +93,7 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, [
+  const post = getItemBySlug(params.slug, [
     "title",
     "date",
     "slug",
@@ -115,7 +115,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = getAllLectures(["slug"]);
 
   return {
     paths: posts.map((post) => {
