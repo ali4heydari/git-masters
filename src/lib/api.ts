@@ -2,9 +2,9 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
-const lecturesDirectory = join(process.cwd(), "_markdowns", "_lectures");
+export const lecturesDirectory = join(process.cwd(), "_markdowns", "_lectures");
 
-const participantsDirectory = join(
+export const participantsDirectory = join(
   process.cwd(),
   "_markdowns",
   "_participants"
@@ -22,7 +22,7 @@ export interface IMarkdownItem {
 
 export interface Lecture {
   slug?: string;
-  content?: string;
+  content: string;
   title: string;
   excerpt: string;
   coverImage: string;
@@ -32,6 +32,7 @@ export interface Lecture {
   picture: string;
   ogImage: string;
   url: string;
+  tags: string[];
 }
 
 export interface Participant {
@@ -46,7 +47,7 @@ export interface Participant {
 
 export function getItemBySlug<TItem extends IMarkdownItem>(
   slug: string,
-  fields: (keyof TItem)[] = [],
+  fields: (keyof TItem)[],
   directoryPath: string
 ): TItem {
   const realSlug = slug.replace(/\.md$/, "");
