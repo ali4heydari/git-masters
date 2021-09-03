@@ -158,6 +158,14 @@ const Syllabus: React.FC = (props) => {
   return (
     <Layout>
       <section className="text-gray-600 body-font">
+        <div className="flex flex-col text-center w-full mt-20">
+          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
+            Syllabus
+          </h1>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            In this course, we will learn to use git like a pro
+          </p>
+        </div>
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <ol className="list-decimal flex flex-wrap md:text-left text-center -mb-10 -mx-4">
             {syllabus.map((section, index) => (
