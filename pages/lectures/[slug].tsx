@@ -1,17 +1,34 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
-import { Container, Layout } from "@components";
-import markdownToHtml from "../../src/lib/markdownToHtml";
-import { getAllLectures, getItemBySlug } from "../../src/lib/api";
-import { SITE_NAME } from "../../src/lib/constants";
+import { Layout } from "@components";
+import markdownToHtml from "@lib/markdownToHtml";
+import {
+  getAllLectures,
+  getItemBySlug,
+  Lecture,
+  lecturesDirectory,
+} from "@lib/api";
+import { SITE_NAME } from "@lib/constants";
+import React from "react";
 
-export default function Post({ post, morePosts, preview }) {
+interface LecturePageProps {
+  lecture: Lecture;
+  moreLectures: any;
+  preview: any;
+}
+
+const LecturePage: React.FC<LecturePageProps> = ({
+  lecture,
+  moreLectures,
+  preview,
+}) => {
   const router = useRouter();
 
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !lecture?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
     <Layout>
       {router.isFallback ? (
@@ -21,9 +38,9 @@ export default function Post({ post, morePosts, preview }) {
           <article className="mb-32">
             <Head>
               <title>
-                {post.title} | {SITE_NAME}
+                {lecture.title} | {SITE_NAME}
               </title>
-              {/*<meta property="og:image" content={post.ogImage.url} />*/}
+              {/*<meta property="og:image" content={lecture.ogImage.url} />*/}
             </Head>
             <section className="text-gray-600 body-font">
               <div className="container px-5 py-24 mx-auto flex flex-col">
@@ -33,7 +50,7 @@ export default function Post({ post, morePosts, preview }) {
                     <img
                       alt="content"
                       className="object-cover object-center h-full w-full"
-                      src={post.coverImage}
+                      src={lecture.coverImage}
                     />
                   </div>
                   <div className="flex flex-col sm:flex-row mt-10">
@@ -56,30 +73,23 @@ export default function Post({ post, morePosts, preview }) {
                         <p className="text-base">Author</p>
                         <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4" />
                         <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">
-                          {post.title}
+                          {lecture.title}
                         </h2>
                       </div>
                     </div>
                     <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                      <p className="leading-relaxed text-lg mb-4">
+                      <div className="leading-relaxed text-lg mb-4">
                         <main
-                          dangerouslySetInnerHTML={{ __html: post.content }}
+                          dangerouslySetInnerHTML={{ __html: lecture.content }}
                         />
-                      </p>
-                      <a className="text-indigo-500 inline-flex items-center">
-                        More
-                        <svg
-                          fill="none"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          className="w-4 h-4 ml-2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </a>
+                      </div>
+                      <div>
+                        {lecture.tags?.map((tag) => (
+                          <span className="ml-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-red-200 text-red-700 rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -90,24 +100,29 @@ export default function Post({ post, morePosts, preview }) {
       )}
     </Layout>
   );
-}
+};
 
 export async function getStaticProps({ params }) {
-  const post = getItemBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
-  const content = await markdownToHtml(post.content || "");
+  const lecture = getItemBySlug<Lecture>(
+    params.slug,
+    [
+      "title",
+      "date",
+      "slug",
+      "author",
+      "content",
+      "ogImage",
+      "coverImage",
+      "tags",
+    ],
+    lecturesDirectory
+  );
+  const content = await markdownToHtml(lecture.content || "");
 
   return {
     props: {
-      post: {
-        ...post,
+      lecture: {
+        ...lecture,
         content,
       },
     },
@@ -115,16 +130,18 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllLectures(["slug"]);
+  const lectures = getAllLectures(["slug"]);
 
   return {
-    paths: posts.map((post) => {
+    paths: lectures.map((lecture) => {
       return {
         params: {
-          slug: post.slug,
+          slug: lecture.slug,
         },
       };
     }),
     fallback: false,
   };
 }
+
+export default LecturePage;

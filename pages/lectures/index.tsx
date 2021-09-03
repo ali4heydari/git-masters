@@ -28,7 +28,11 @@ const Lectures: React.FC<{ allLectures: Lecture[] }> = ({ allLectures }) => {
                 >
                   <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                     <span className="font-semibold title-font text-gray-700">
-                      CATEGORY
+                      {lecture.tags?.map((tag) => (
+                        <span className="ml-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-red-200 text-red-700 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
                     </span>
                     <time className="text-sm text-gray-500">
                       {distanceToNow(new Date(lecture.date))}
@@ -43,8 +47,8 @@ const Lectures: React.FC<{ allLectures: Lecture[] }> = ({ allLectures }) => {
                       as={`/lectures/${lecture.slug}`}
                       href="/lectures/[slug]"
                     >
-                      <a className="text-indigo-500 inline-flex items-center mt-4">
-                        Learn More
+                      <a className="text-red-500 inline-flex items-center mt-4">
+                        More
                         <svg
                           className="w-4 h-4 ml-2"
                           viewBox="0 0 24 24"
@@ -72,12 +76,18 @@ const Lectures: React.FC<{ allLectures: Lecture[] }> = ({ allLectures }) => {
   );
 };
 
-export default Lectures;
-
 export async function getStaticProps() {
-  const allLectures = getAllLectures(["slug", "title", "excerpt", "date"]);
+  const allLectures = getAllLectures([
+    "slug",
+    "title",
+    "excerpt",
+    "date",
+    "tags",
+  ]);
 
   return {
     props: { allLectures },
   };
 }
+
+export default Lectures;
