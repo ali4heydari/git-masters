@@ -85,7 +85,10 @@ const LecturePage: React.FC<LecturePageProps> = ({
                       </div>
                       <div>
                         {lecture.tags?.map((tag) => (
-                          <span className="ml-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-red-200 text-red-700 rounded-full">
+                          <span
+                            key={tag}
+                            className="ml-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-red-200 text-red-700 rounded-full"
+                          >
                             {tag}
                           </span>
                         ))}

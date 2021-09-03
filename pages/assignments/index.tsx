@@ -43,7 +43,10 @@ const Assignments: React.FC = (props) => {
         </div>
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           {assignments.map((it, idx) => (
-            <div className="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div
+              key={it.title}
+              className="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto"
+            >
               <div className="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">
                 {idx + 1}
               </div>
