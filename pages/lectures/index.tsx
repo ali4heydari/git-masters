@@ -35,7 +35,7 @@ const Lectures: React.FC<{ allLectures: Lecture[] }> = ({ allLectures }) => {
                       ))}
                     </span>
                     <time className="text-sm text-gray-500">
-                      {distanceToNow(new Date(lecture.date))}
+                      {distanceToNow(new Date(lecture.releaseDate))}
                     </time>
                   </div>
                   <div className="md:flex-grow">
@@ -81,7 +81,7 @@ export async function getStaticProps() {
     "slug",
     "title",
     "excerpt",
-    "date",
+    "releaseDate",
     "tags",
   ]);
 

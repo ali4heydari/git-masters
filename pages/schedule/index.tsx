@@ -1,7 +1,11 @@
 import React from "react";
 import { Layout } from "@components";
+import { getAllAssignments, getAllLectures, IEvent } from "@lib/api";
+import Link from "next/link";
 
-const Index: React.FC = (props) => {
+const Schedule: React.FC<{
+  allEvents: IEvent[];
+}> = ({ allEvents }) => {
   return (
     <Layout>
       <section className="text-gray-600 body-font">
@@ -11,9 +15,7 @@ const Index: React.FC = (props) => {
               Schedule
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Banh mi cornhole echo park skateboard authentic crucifix neutra
-              tilde lyft biodiesel artisan direct trade mumblecore 3 wolf moon
-              twee
+              Here you can find all lectures and assignments
             </p>
           </div>
           <div className="lg:w-2/3 w-full mx-auto overflow-auto">
@@ -36,23 +38,35 @@ const Index: React.FC = (props) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="border-t-2 border-gray-200 px-4 py-3">
-                    Assignment
-                  </td>
-                  <td className="border-t-2 border-gray-200 px-4 py-3">
-                    {new Date().toISOString()}
-                  </td>
-                  <td className="border-t-2 border-gray-200 px-4 py-3">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Maiores temporibus, voluptate. A ab accusamus aperiam
-                    corporis ducimus ea earum optio repudiandae voluptates
-                    voluptatum? Aliquid animi eligendi totam? A, commodi modi.
-                  </td>
-                  <td className="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">
-                    <a>Link</a>
-                  </td>
-                </tr>
+                {allEvents.map((event) => (
+                  <tr>
+                    <td className="border-t-2 border-gray-200 px-4 py-3">
+                      {event?.type}
+                    </td>
+                    <td className="border-t-2 border-gray-200 px-4 py-3">
+                      {new Date(event.releaseDate).toISOString()}
+                    </td>
+                    <td className="border-t-2 border-gray-200 px-4 py-3">
+                      {event.title}
+                    </td>
+                    <td className="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">
+                      <Link
+                        href={
+                          event.type === "ASSIGNMENT"
+                            ? "/assignments/[slug]"
+                            : "/lectures/[slug]"
+                        }
+                        as={
+                          event.type === "ASSIGNMENT"
+                            ? `/assignments/${event.slug}`
+                            : `/lectures/${event.slug}`
+                        }
+                      >
+                        <a className="text-blue-800">More</a>
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -62,4 +76,28 @@ const Index: React.FC = (props) => {
   );
 };
 
-export default Index;
+export async function getStaticProps() {
+  const allLectures: IEvent[] = getAllLectures([
+    "type",
+    "title",
+    "slug",
+    "releaseDate",
+  ]);
+
+  const allAssignments: IEvent[] = getAllAssignments([
+    "type",
+    "title",
+    "slug",
+    "releaseDate",
+  ]);
+
+  const allEvents: IEvent[] = [...allLectures, ...allAssignments].sort(
+    (event1, event2) => (event1.releaseDate > event2.releaseDate ? -1 : 1)
+  );
+
+  return {
+    props: { allEvents },
+  };
+}
+
+export default Schedule;

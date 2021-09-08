@@ -110,7 +110,7 @@ export async function getStaticProps({ params }) {
     params.slug,
     [
       "title",
-      "date",
+      "releaseDate",
       "slug",
       "author",
       "content",
