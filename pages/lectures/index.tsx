@@ -12,11 +12,7 @@ const Lectures: React.FC<{ allLectures: Lecture[] }> = ({ allLectures }) => {
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
             Lectures
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Banh mi cornhole echo park skateboard authentic crucifix neutra
-            tilde lyft biodiesel artisan direct trade mumblecore 3 wolf moon
-            twee
-          </p>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
         </div>
         <div className="container px-5 py-24 mx-auto">
           <div className="-my-8 divide-y-2 divide-gray-100">

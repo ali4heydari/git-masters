@@ -45,9 +45,7 @@ const CourseMaterials: React.FC = (props) => {
               Course materials
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-              gentrify, subway tile poke farm-to-table. Franzen you probably
-              haven't heard of them.
+              This materials helps you to learn and understand concepts
             </p>
           </div>
           <div className="flex flex-wrap -m-4">
