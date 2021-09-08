@@ -22,16 +22,21 @@ export function getItemSlugs(directoryPath: string) {
 export interface IMarkdownItem {
   slug?: string;
   content?: string;
+
   [key: string]: any;
 }
 
-export interface Lecture {
-  slug?: string;
-  content: string;
+export interface IEvent {
   title: string;
+  slug?: string;
+  releaseDate: string;
+  type: "ASSIGNMENT" | "LECTURE";
+}
+
+export interface Lecture extends IEvent {
+  content: string;
   excerpt: string;
   coverImage: string;
-  date: string;
   author: string;
   name: string;
   picture: string;
@@ -40,12 +45,9 @@ export interface Lecture {
   tags: string[];
 }
 
-export interface Assignment {
-  slug?: string;
+export interface Assignment extends IEvent {
   content: string;
-  releaseDate: Date;
   dueDate: Date;
-  title: string;
   documentation: string;
   attachment: string;
   solution: string;
@@ -107,14 +109,14 @@ export function getAllItems<TItem>(
   return (
     slugs
       .map((slug) => getItemBySlug<TItem>(slug, fields, directoryPath))
-      // sort posts by date in descending order
+      // sort posts by releaseDate in descending order
       .sort(compareFn)
   );
 }
 
 export const getAllLectures = (fields: (keyof Lecture)[] = []) =>
   getAllItems<Lecture>(lecturesDirectory, fields, (lecture1, lecture2) =>
-    lecture1.date > lecture2.date ? -1 : 1
+    lecture1.releaseDate > lecture2.releaseDate ? -1 : 1
   );
 
 export const getAllAssignments = (fields: (keyof Assignment)[] = []) =>
