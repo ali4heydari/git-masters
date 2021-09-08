@@ -3,6 +3,11 @@ import { join } from "path";
 import matter from "gray-matter";
 
 export const lecturesDirectory = join(process.cwd(), "_markdowns", "_lectures");
+export const assignmentsDirectory = join(
+  process.cwd(),
+  "_markdowns",
+  "_assignments"
+);
 
 export const participantsDirectory = join(
   process.cwd(),
@@ -32,6 +37,19 @@ export interface Lecture {
   picture: string;
   ogImage: string;
   url: string;
+  tags: string[];
+}
+
+export interface Assignment {
+  slug?: string;
+  content: string;
+  releaseDate: Date;
+  dueDate: Date;
+  title: string;
+  documentation: string;
+  attachment: string;
+  solution: string;
+  excerpt: string;
   tags: string[];
 }
 
@@ -97,6 +115,14 @@ export function getAllItems<TItem>(
 export const getAllLectures = (fields: (keyof Lecture)[] = []) =>
   getAllItems<Lecture>(lecturesDirectory, fields, (lecture1, lecture2) =>
     lecture1.date > lecture2.date ? -1 : 1
+  );
+
+export const getAllAssignments = (fields: (keyof Assignment)[] = []) =>
+  getAllItems<Assignment>(
+    assignmentsDirectory,
+    fields,
+    (assignment1, assignment2) =>
+      assignment1.releaseDate > assignment2.releaseDate ? -1 : 1
   );
 
 export const getAllParticipants = (fields: (keyof Participant)[] = []) =>
