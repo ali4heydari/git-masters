@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 import { join } from "path";
 import matter from "gray-matter";
 
@@ -16,7 +17,9 @@ export const participantsDirectory = join(
 );
 
 export function getItemSlugs(directoryPath: string) {
-  return fs.readdirSync(directoryPath);
+  return fs
+    .readdirSync(directoryPath)
+    .filter((fileName) => fileName.toLocaleLowerCase().endsWith(".md"));
 }
 
 export interface IMarkdownItem {
