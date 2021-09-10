@@ -9,6 +9,7 @@ const CourseMaterials: React.FC = (props) => {
         subTitle: "2nd edition",
         description: "this book helps for learning git",
         image: "",
+        href: "https://git.com",
       },
       {
         title: "Git pro",
@@ -50,13 +51,19 @@ const CourseMaterials: React.FC = (props) => {
           </div>
           <div className="flex flex-wrap -m-4">
             {courseMaterials.map((it) => (
-              <div key={it.title} className="p-4 lg:w-1/4 md:w-1/2">
+              <a
+                href={it?.href}
+                key={it.title}
+                className="p-4 lg:w-1/3 md:w-1/2"
+              >
                 <div className="h-full flex flex-col items-center text-center">
-                  <img
-                    alt={it.title}
-                    className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                    src={it?.image || ""}
-                  />
+                  {it?.image && (
+                    <img
+                      alt={it.title}
+                      className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+                      src={it?.image}
+                    />
+                  )}
                   <div className="w-full">
                     <h2 className="title-font font-medium text-lg text-gray-900">
                       {it.title}
@@ -65,7 +72,7 @@ const CourseMaterials: React.FC = (props) => {
                     <p className="mb-4">{it?.description || ""}</p>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
