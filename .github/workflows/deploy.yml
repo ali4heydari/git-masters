@@ -41,6 +41,8 @@ jobs:
           yarn install --frozen-lockfile
           yarn build
           yarn export
+        env:
+          NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS_CODE }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
