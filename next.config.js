@@ -1,5 +1,7 @@
 const withPlugins = require("next-compose-plugins");
 const { basePath } = require("./envs");
+const withPWA = require("next-pwa");
+
 // const { i18n } = require("./next-i18next.config");
 
 const isProd = process.env.NODE_ENV === "production";
@@ -16,4 +18,17 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([], nextConfig);
+module.exports = withPlugins(
+  [
+    [
+      withPWA,
+      {
+        pwa: {
+          dest: "public",
+          disable: !isProd,
+        },
+      },
+    ],
+  ],
+  nextConfig
+);
