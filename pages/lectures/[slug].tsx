@@ -20,20 +20,20 @@ interface LecturePageProps {
   preview: any;
 }
 
-const MarkDownMainComponent = styled.main`
+const GitHubMarkdown = styled.main`
   a {
     color: red;
     border-radius: 10px;
-    padding: 0px 8px;
+    padding: 0px 4px;
     text-decoration: underline;
   }
 
-  a:visited {
-    color: blue;
+  a:hover {
+    background: #f1dada;
   }
 
-  a:hover {
-    background: #e5c6c6;
+  ol li {
+    list-style-type: decimal;
   }
 `;
 
@@ -108,7 +108,8 @@ const LecturePage: React.FC<LecturePageProps> = ({
                     </div>
                     <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                       <div className="leading-relaxed text-lg mb-4">
-                        <MarkDownMainComponent
+                        <GitHubMarkdown
+                          className="markdown-body"
                           dangerouslySetInnerHTML={{ __html: lecture.content }}
                         />
                       </div>
