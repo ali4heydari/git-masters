@@ -1,6 +1,7 @@
 import React from "react";
 import { AppProps } from "next/app";
 import "tailwindcss/tailwind.css";
+import "github-markdown-css";
 import { StyledThemeProvider } from "@definitions/styled-components";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Hydrate } from "react-query/hydration";
