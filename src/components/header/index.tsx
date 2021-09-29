@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { PUBLIC_URL, SITE_NAME } from "@lib/constants";
+import { SITE_NAME } from "@lib/constants";
 import { GitLogo } from "@components/icons";
 import { ActiveLink } from "@components/activeLink";
 
@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
     () => [
       {
         text: "Home",
-        href: PUBLIC_URL,
+        href: "/",
       },
       {
         text: "Syllabus",
@@ -54,7 +54,9 @@ export const Header: React.FC = () => {
               href={it.href}
               key={it.href}
             >
-              <a className="p-2 hover:text-gray-900">{it.text}</a>
+              <a className="px-2 py-1 mx-1 hover:text-gray-900 hover:bg-red-100 rounded">
+                {it.text}
+              </a>
             </ActiveLink>
           ))}
         </nav>
