@@ -40,6 +40,7 @@ const Participants: React.FC<{ allParticipants: Participant[] }> = (props) => {
                             <svg
                               key={idx}
                               fill={
+                                // @ts-ignore
                                 idx + 1 <= it?.rate ? "currentColor" : "none"
                               }
                               stroke="currentColor"

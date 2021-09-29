@@ -34,6 +34,7 @@ export const StyledThemeProvider: React.FC = ({ children }) => {
   );
 
   return (
+    // @ts-ignore
     <ThemeContext.Provider value={values}>
       <ThemeProvider theme={theme === "light" ? light : dark}>
         {children}

@@ -106,7 +106,7 @@ const LecturePage: React.FC<LecturePageProps> = ({
   );
 };
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const lecture = getItemBySlug<Lecture>(
     params.slug,
     [

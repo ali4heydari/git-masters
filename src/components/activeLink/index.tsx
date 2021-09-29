@@ -10,6 +10,7 @@ export const ActiveLink: React.FC<{ activeClassName: string } & LinkProps> = ({
 }) => {
   const { asPath } = useRouter();
   const child = Children.only(children);
+  //@ts-ignore
   const childClassName = child?.props?.className || "";
 
   // pages/index.js will be matched via props.href
@@ -22,9 +23,12 @@ export const ActiveLink: React.FC<{ activeClassName: string } & LinkProps> = ({
 
   return (
     <Link {...props}>
-      {React.cloneElement(child, {
-        className: className || null,
-      })}
+      {
+        // @ts-ignore
+        React.cloneElement(child, {
+          className: className || null,
+        })
+      }
     </Link>
   );
 };

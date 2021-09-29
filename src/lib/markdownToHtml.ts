@@ -5,6 +5,7 @@ import remarkPrism from "remark-prism";
 export default async function markdownToHtml(markdown: any) {
   const result = await remark()
     .use(html)
+    // @ts-ignore
     .use(remarkPrism, {
       plugins: [
         "autolinker",
