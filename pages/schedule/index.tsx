@@ -44,7 +44,11 @@ const Schedule: React.FC<{
                       {event?.type}
                     </td>
                     <td className="border-t-2 border-gray-200 px-4 py-3">
-                      {new Date(event.releaseDate).toISOString()}
+                      {`${new Date(event.releaseDate).toLocaleDateString(
+                        "en-US"
+                      )} - ${new Date(event.releaseDate).toLocaleTimeString(
+                        "en-US"
+                      )}`}
                     </td>
                     <td className="border-t-2 border-gray-200 px-4 py-3">
                       {event.title}
@@ -62,7 +66,9 @@ const Schedule: React.FC<{
                             : `/lectures/${event.slug}`
                         }
                       >
-                        <a className="text-blue-800">More</a>
+                        <a className="text-red-500 hover:bg-red-50 underline rounded px-1">
+                          More
+                        </a>
                       </Link>
                     </td>
                   </tr>
