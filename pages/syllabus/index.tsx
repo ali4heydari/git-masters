@@ -181,11 +181,11 @@ const Syllabus: React.FC = (props) => {
                 </div>
                 <div className="flex-grow pl-4">
                   <p className="font-medium text-xl text-gray-900 mb-1 tracking-wider">
-                    {`${index + 1}. ${section.title}`}
+                    {`${index + 1}. ${section.title}`.toLocaleUpperCase()}
                   </p>
                   <ol className="list-decimal">
                     {section.subs.map((subName) => (
-                      <li key={subName} className="leading-relaxed">
+                      <li key={subName} className="leading-relaxed text-left">
                         {subName}
                       </li>
                     ))}
