@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fassignments","\u002Flectures","\u002Fparticipants","\u002Fschedule","\u002Flectures\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
