@@ -13,6 +13,7 @@ import {
 import { SITE_NAME } from "@lib/constants";
 import React from "react";
 import styled from "styled-components";
+import { DiscussionEmbed } from "disqus-react";
 
 interface LecturePageProps {
   lecture: Lecture;
@@ -47,6 +48,12 @@ const LecturePage: React.FC<LecturePageProps> = ({
   if (!router.isFallback && !lecture?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const disqusConfig = {
+    url: `https://ali4heydari.tech${router.basePath}/${lecture.slug}`,
+    identifier: lecture.slug,
+    title: lecture.title,
+  };
 
   return (
     <Layout>
@@ -124,6 +131,10 @@ const LecturePage: React.FC<LecturePageProps> = ({
                           </span>
                         ))}
                       </div>
+                      <DiscussionEmbed
+                        shortname={"ali4heydari-tech"}
+                        config={disqusConfig}
+                      />
                     </div>
                   </div>
                 </div>
