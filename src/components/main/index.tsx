@@ -1,14 +1,16 @@
 import React from "react";
 import Link from "next/link";
+import envs from "../../../envs";
+import { Image } from "@components";
 
 export const Main: React.FC = () => {
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-2 items-center justify-center flex-col">
-        <img
-          className="lg:w-3/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
+        <Image
           alt="hero"
-          src="/images/ali-heydari-high-resolution.jpg"
+          className="lg:w-3/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded relative"
+          src={`${envs.basePath}/images/ali-heydari-high-resolution.jpg`}
         />
 
         <div className="text-center lg:w-2/3 w-full">

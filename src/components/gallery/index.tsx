@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "@components";
 
 export const Gallery: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ export const Gallery: React.FC = () => {
         <div className="flex flex-wrap -m-4">
           <div className="lg:w-1/3 sm:w-1/2 p-4">
             <div className="flex relative">
-              <img
+              <Image
                 alt="gallery"
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 src="https://dummyimage.com/600x360"
