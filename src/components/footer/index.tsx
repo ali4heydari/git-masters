@@ -33,21 +33,6 @@ export const Footer: React.FC = () => {
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           <a
-            href={`https://facebook.com/${SITE_AUTHOR_FACEBOOK_ID}`}
-            className="text-gray-500"
-          >
-            <svg
-              fill="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-            </svg>
-          </a>
-          <a
             href={`https://twitter.com/${SITE_AUTHOR_TWITTER_ID}`}
             className="ml-3 text-gray-500"
           >
@@ -63,24 +48,7 @@ export const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href={`https://instagram.com/${SITE_AUTHOR_INSTAGRAM_ID}`}
-            className="ml-3 text-gray-500"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-            </svg>
-          </a>
-          <a
-            href={`https://linkedin.com/${SITE_AUTHOR_LINKEDIN_ID}`}
+            href={`https://linkedin.com/in/${SITE_AUTHOR_LINKEDIN_ID}`}
             className="ml-3 text-gray-500"
           >
             <svg
