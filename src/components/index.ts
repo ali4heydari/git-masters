@@ -9,3 +9,4 @@ export { Statistics } from "./statistics";
 export { Testimonial } from "./testimonial";
 export { Layout } from "./layout";
 export { ActiveLink } from "./activeLink";
+export { Image } from "./image";
