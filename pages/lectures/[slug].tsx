@@ -12,12 +12,30 @@ import {
 } from "@lib/api";
 import { SITE_NAME } from "@lib/constants";
 import React from "react";
+import styled from "styled-components";
 
 interface LecturePageProps {
   lecture: Lecture;
   moreLectures: any;
   preview: any;
 }
+
+const MarkDownMainComponent = styled.main`
+  a {
+    color: red;
+    border-radius: 10px;
+    padding: 0px 8px;
+    text-decoration: underline;
+  }
+
+  a:visited {
+    color: blue;
+  }
+
+  a:hover {
+    background: #e5c6c6;
+  }
+`;
 
 const LecturePage: React.FC<LecturePageProps> = ({
   lecture,
@@ -71,7 +89,9 @@ const LecturePage: React.FC<LecturePageProps> = ({
                         </svg>
                       </div>
                       <div className="flex flex-col items-center text-center justify-center">
-                        <p className="text-base">Author</p>
+                        <p className="text-base">
+                          {lecture.author || "Ali Heydari"}
+                        </p>
                         <div className="w-12 h-1 bg-red-500 rounded mt-2 mb-4" />
                         <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">
                           {lecture.title}
@@ -80,7 +100,7 @@ const LecturePage: React.FC<LecturePageProps> = ({
                     </div>
                     <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                       <div className="leading-relaxed text-lg mb-4">
-                        <main
+                        <MarkDownMainComponent
                           dangerouslySetInnerHTML={{ __html: lecture.content }}
                         />
                       </div>
