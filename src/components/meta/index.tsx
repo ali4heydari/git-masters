@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { HOME_OG_IMAGE_URL, SITE_DESCRIPTION } from "../../lib/constants";
 import React from "react";
-import { basePath } from "../../../envs";
+import { basePath, googleAnalyticsCode } from "../../../envs";
 
 export const Meta: React.FC = () => {
   return (
@@ -145,6 +145,23 @@ export const Meta: React.FC = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={SITE_DESCRIPTION} />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsCode}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsCode}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
     </Head>
   );
 };
