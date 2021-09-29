@@ -1,5 +1,5 @@
 ---
-title: "Before you start"
+title: "Before We start"
 excerpt: "Start from here and join Teams learning channel"
 coverImage: "/git-masters/images/git-cover.jpeg"
 releaseDate: "2021-09-29T16:00:00"
@@ -11,6 +11,7 @@ tags: [announcements]
 ---
 
 Hi all!
+
 Before I begin, I would like to thank you for your trust and kindness. Classes will be held online in Teams, and lessons
 are practical. The class link has been placed for participation. Please request through the link before the start of the
 class to open access for you.
