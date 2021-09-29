@@ -72,7 +72,7 @@ const LecturePage: React.FC<LecturePageProps> = ({
                       </div>
                       <div className="flex flex-col items-center text-center justify-center">
                         <p className="text-base">Author</p>
-                        <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4" />
+                        <div className="w-12 h-1 bg-red-500 rounded mt-2 mb-4" />
                         <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">
                           {lecture.title}
                         </h2>

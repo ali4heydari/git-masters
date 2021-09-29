@@ -176,7 +176,7 @@ const Syllabus: React.FC = (props) => {
                 <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                   <div className="h-full w-1 bg-gray-200 pointer-events-none" />
                 </div>
-                <div className="-ml-4 flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                <div className="-ml-4 flex-shrink-0 w-10 h-10 rounded-full bg-red-400 inline-flex items-center justify-center text-white relative z-10">
                   {section?.icon}
                 </div>
                 <div className="flex-grow pl-4">

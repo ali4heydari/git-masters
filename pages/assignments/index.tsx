@@ -43,7 +43,7 @@ const Assignments: React.FC<{
                     as={`/assignments/${it.slug}`}
                     href="/assignments/[slug]"
                   >
-                    <a className="text-indigo-500 inline-flex items-center">
+                    <a className="text-red-500 inline-flex items-center">
                       More
                       <svg
                         className="w-4 h-4 ml-2"

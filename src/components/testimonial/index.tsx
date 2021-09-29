@@ -24,7 +24,7 @@ export const Testimonial: React.FC = () => {
             shoindigoitch ethical authentic, yr scenester sriracha forage
             franzen organic drinking vinegar.
           </p>
-          <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6" />
+          <span className="inline-block h-1 w-10 rounded bg-red-500 mt-8 mb-6" />
           <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
             HOLDEN CAULFIELD
           </h2>
