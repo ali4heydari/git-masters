@@ -10,7 +10,7 @@ export const Main: React.FC = () => {
         <Image
           alt="hero"
           className="lg:w-3/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded relative"
-          src={`${envs.basePath}/images/ali-heydari-high-resolution.jpg`}
+          src={`${envs.basePath}/images/git-cover.jpeg`}
         />
 
         <div className="text-center lg:w-2/3 w-full">
