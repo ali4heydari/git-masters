@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { SITE_NAME } from "@lib/constants";
 import { GitLogo } from "@components/icons";
 import { ActiveLink } from "@components/activeLink";
+import Link from "next/link";
 
 export const Header: React.FC = () => {
   const navLinks = useMemo(
@@ -41,10 +42,12 @@ export const Header: React.FC = () => {
   return (
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <GitLogo className="w-10 h-10 text-white p-0 rounded-full" />
-          <span className="ml-3 text-xl">{SITE_NAME}</span>
-        </a>
+        <Link href="/">
+          <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <GitLogo className="w-10 h-10 text-white p-0 rounded-full" />
+            <span className="ml-3 text-xl">{SITE_NAME}</span>
+          </a>
+        </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {navLinks.map((it) => (
             <ActiveLink
