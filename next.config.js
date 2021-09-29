@@ -10,6 +10,10 @@ const nextConfig = {
   // i18n,
   basePath,
   assetPrefix: isProd ? `${basePath}/` : "",
+  images: {
+    loader: "imgix",
+    path: `https://ali4heydari.github.io`,
+  },
 };
 
 module.exports = withPlugins([], nextConfig);
