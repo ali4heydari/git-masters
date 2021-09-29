@@ -59,7 +59,7 @@ const LecturePage: React.FC<LecturePageProps> = ({
               <title>
                 {lecture.title} | {SITE_NAME}
               </title>
-              {/*<meta property="og:image" content={lecture.ogImage.url} />*/}
+              <meta property="og:image" content={lecture.coverImage} />
             </Head>
             <section className="text-gray-600 body-font">
               <div className="container px-5 py-24 mx-auto flex flex-col">
@@ -75,18 +75,26 @@ const LecturePage: React.FC<LecturePageProps> = ({
                   <div className="flex flex-col sm:flex-row mt-10">
                     <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
                       <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
-                        <svg
-                          fill="none"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          className="w-10 h-10"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                          <circle cx={12} cy={7} r={4} />
-                        </svg>
+                        {lecture.author && lecture.author !== "Ali Heydari" ? (
+                          <svg
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            className="w-10 h-10"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                            <circle cx={12} cy={7} r={4} />
+                          </svg>
+                        ) : (
+                          <img
+                            alt="Ali Heydari"
+                            className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full"
+                            src={`https://github.com/ali4heydari.png`}
+                          />
+                        )}
                       </div>
                       <div className="flex flex-col items-center text-center justify-center">
                         <p className="text-base">
@@ -104,7 +112,8 @@ const LecturePage: React.FC<LecturePageProps> = ({
                           dangerouslySetInnerHTML={{ __html: lecture.content }}
                         />
                       </div>
-                      <div>
+                      <div className="mt-20 pt-2 border-t-2 border-gray-200">
+                        <span>Tags:</span>
                         {lecture.tags?.map((tag) => (
                           <span
                             key={tag}
