@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { Layout } from "@components";
+import envs from "../../envs";
 
 const CourseMaterials: React.FC = (props) => {
   const courseMaterials = useMemo(
@@ -7,31 +8,9 @@ const CourseMaterials: React.FC = (props) => {
       {
         title: "Git pro",
         subTitle: "2nd edition",
-        description: "this book helps for learning git",
-        image: "",
-        href: "https://git.com",
-      },
-      {
-        title: "Git pro",
-        subTitle: "2nd edition",
-        description: "this book helps for learning git",
-        image: "",
-      },
-      {
-        title: "Git pro",
-        subTitle: "2nd edition",
-        description: "this book helps for learning git",
-        image: "",
-      },
-      {
-        title: "Git pro",
-        subTitle: "2nd edition",
-        description: "this book helps for learning git",
-      },
-      {
-        title: "Git pro",
-        subTitle: "2nd edition",
-        description: "this book helps for learning git",
+        description: "by Scott Chacon and Ben Straub",
+        image: `${envs.basePath}/images/pro-git.jpg`,
+        href: "https://git-scm.com/book/en/v2",
       },
     ],
     []
@@ -49,18 +28,18 @@ const CourseMaterials: React.FC = (props) => {
               This materials helps you to learn and understand concepts
             </p>
           </div>
-          <div className="flex flex-wrap -m-4">
+          <div className="flex flex-wrap">
             {courseMaterials.map((it) => (
               <a
                 href={it?.href}
                 key={it.title}
-                className="p-4 lg:w-1/3 md:w-1/2"
+                className="p-4 lg:w-1/3 md:w-1/2 hover:bg-red-100 "
               >
                 <div className="h-full flex flex-col items-center text-center">
                   {it?.image && (
                     <img
                       alt={it.title}
-                      className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+                      className="flex-shrink-0 rounded-lg w-full h-96 object-cover object-center mb-4 block"
                       src={it?.image}
                     />
                   )}
