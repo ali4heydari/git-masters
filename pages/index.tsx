@@ -15,9 +15,9 @@ const Home: React.FC = () => {
     <Container>
       <Header />
       <Main />
-      <Gallery />
-      <Statistics />
-      <Testimonial />
+      {/*<Gallery />*/}
+      {/*<Statistics />*/}
+      {/*<Testimonial />*/}
       <Footer />
     </Container>
   );

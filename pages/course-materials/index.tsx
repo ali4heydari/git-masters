@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { Layout } from "@components";
 import envs from "../../envs";
+import Link from "next/link";
 
 const CourseMaterials: React.FC = (props) => {
   const courseMaterials = useMemo(
@@ -30,28 +31,28 @@ const CourseMaterials: React.FC = (props) => {
           </div>
           <div className="flex flex-wrap">
             {courseMaterials.map((it) => (
-              <a
-                href={it?.href}
-                key={it.title}
-                className="p-4 lg:w-1/3 md:w-1/2 hover:bg-red-100 "
-              >
-                <div className="h-full flex flex-col items-center text-center">
-                  {it?.image && (
-                    <img
-                      alt={it.title}
-                      className="flex-shrink-0 rounded-lg w-full h-96 object-cover object-center mb-4 block"
-                      src={it?.image}
-                    />
-                  )}
-                  <div className="w-full">
-                    <h2 className="title-font font-medium text-lg text-gray-900">
-                      {it.title}
-                    </h2>
-                    <h3 className="text-gray-500 mb-3">{it?.subTitle || ""}</h3>
-                    <p className="mb-4">{it?.description || ""}</p>
+              <Link href={it?.href} key={it.title}>
+                <a className="p-4 lg:w-1/3 md:w-1/2 hover:bg-red-100 ">
+                  <div className="h-full flex flex-col items-center text-center">
+                    {it?.image && (
+                      <img
+                        alt={it.title}
+                        className="flex-shrink-0 rounded-lg w-full h-96 object-cover object-center mb-4 block"
+                        src={it?.image}
+                      />
+                    )}
+                    <div className="w-full">
+                      <h2 className="title-font font-medium text-lg text-gray-900">
+                        {it.title}
+                      </h2>
+                      <h3 className="text-gray-500 mb-3">
+                        {it?.subTitle || ""}
+                      </h3>
+                      <p className="mb-4">{it?.description || ""}</p>
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </Link>
             ))}
           </div>
         </div>

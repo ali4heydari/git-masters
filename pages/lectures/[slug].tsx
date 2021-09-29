@@ -3,6 +3,7 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 import { Layout } from "@components";
 import markdownToHtml from "@lib/markdownToHtml";
+import { Image } from "@components";
 import {
   getAllLectures,
   getItemBySlug,
@@ -47,7 +48,7 @@ const LecturePage: React.FC<LecturePageProps> = ({
                 <div className="lg:w-4/6 mx-auto">
                   <div className="rounded-lg h-64 overflow-hidden">
                     {/*1200*500 image*/}
-                    <img
+                    <Image
                       alt="content"
                       className="object-cover object-center h-full w-full"
                       src={lecture.coverImage}
