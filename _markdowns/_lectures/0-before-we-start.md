@@ -1,5 +1,5 @@
 ---
-title: "Before We start"
+title: "Before we start"
 excerpt: "Start from here and join Teams learning channel"
 coverImage: "/git-masters/images/git-cover.jpeg"
 releaseDate: "2021-09-29T16:00:00"
@@ -24,4 +24,4 @@ It is recommended that you install the Git software and another prerequisite:
 
 1. [VS Code](https://code.visualstudio.com/download)
 2. [Git kraken](https://www.gitkraken.com/)
-3. [Git](https://git-scm.com/download/) - [download install guide](/git-masters/assets/files/git-install-guide.pdf)
+3. [Git](https://git-scm.com/download/) - [download install guide](/git-masters/noprecache/files/git-install-guide.pdf)
