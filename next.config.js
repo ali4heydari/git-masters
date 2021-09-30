@@ -26,6 +26,7 @@ module.exports = withPlugins(
         pwa: {
           dest: "public",
           disable: !isProd,
+          scope: basePath,
         },
       },
     ],
