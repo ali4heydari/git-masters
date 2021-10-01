@@ -1,5 +1,5 @@
 const withPlugins = require("next-compose-plugins");
-const { basePath } = require("./envs");
+const { basePath, domain } = require("./envs");
 // const { i18n } = require("./next-i18next.config");
 
 const isProd = process.env.NODE_ENV === "production";
@@ -12,7 +12,7 @@ const nextConfig = {
   assetPrefix: isProd ? `${basePath}/` : "",
   images: {
     loader: "imgix",
-    path: `https://ali4heydari.github.io`,
+    path: domain,
   },
 };
 

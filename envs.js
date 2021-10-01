@@ -5,4 +5,5 @@ module.exports = {
   hotjarSnippetVersion: Number(
     process.env.NEXT_PUBLIC_HOTJAR_SNIPPET_VERSION || 0
   ),
+  domain: process.env.NEXT_PUBLIC_DOMAIN || "https://ali4heydari.tech",
 };

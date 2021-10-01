@@ -14,6 +14,7 @@ import { SITE_NAME } from "@lib/constants";
 import React from "react";
 import styled from "styled-components";
 import { DiscussionEmbed } from "disqus-react";
+import { domain } from "../../envs";
 
 interface LecturePageProps {
   lecture: Lecture;
@@ -50,7 +51,7 @@ const LecturePage: React.FC<LecturePageProps> = ({
   }
 
   const disqusConfig = {
-    url: `https://ali4heydari.tech${router.basePath}/${lecture.slug}`,
+    url: `${domain}${router.basePath}/${lecture.slug}`,
     identifier: lecture.slug,
     title: lecture.title,
   };
