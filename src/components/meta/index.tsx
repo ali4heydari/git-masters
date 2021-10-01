@@ -1,7 +1,12 @@
 import Head from "next/head";
-import { HOME_OG_IMAGE_URL, SITE_DESCRIPTION } from "../../lib/constants";
+import {
+  HOME_OG_IMAGE_URL,
+  SITE_AUTHOR_TWITTER_ID,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+} from "@lib/constants";
 import React from "react";
-import { basePath, googleAnalyticsCode } from "../../../envs";
+import { basePath, googleAnalyticsCode, domain } from "../../../envs";
 
 export const Meta: React.FC = () => {
   return (
@@ -141,11 +146,23 @@ export const Meta: React.FC = () => {
         href={`${basePath}/assets/favicon/favicon.ico`}
       />
       <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="theme-color" content="#000" />
+      <meta
+        name="theme-color"
+        content="#0000"
+        media="(prefers-color-scheme: light)"
+      />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={SITE_DESCRIPTION} />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
-
+      <meta name="twitter:card" content={SITE_DESCRIPTION} />
+      <meta name="twitter:url" content={domain} />
+      <meta name="twitter:title" content={SITE_NAME} />
+      <meta name="twitter:description" content={SITE_DESCRIPTION} />
+      <meta
+        name="twitter:image"
+        content={`${domain}${basePath}/assets/favicon/favicon-196x196.png`}
+      />
+      <meta name="twitter:creator" content={`@${SITE_AUTHOR_TWITTER_ID}`} />
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsCode}`}
