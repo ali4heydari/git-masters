@@ -10,6 +10,8 @@ import store from "@redux/store";
 import { appWithTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import * as ga from "../src/lib/ga";
+import { hotjar } from "react-hotjar";
+import { hotjarId, hotjarSnippetVersion } from "../envs";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const queryClient = new QueryClient();
@@ -29,6 +31,11 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    // @ts-ignore
+    hotjar.initialize(hotjarId, hotjarSnippetVersion);
+  }, []);
 
   return (
     <StyledThemeProvider>
