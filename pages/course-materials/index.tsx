@@ -13,6 +13,13 @@ const CourseMaterials: React.FC = (props) => {
         image: `${envs.basePath}/images/pro-git.jpg`,
         href: "https://git-scm.com/book/en/v2",
       },
+      {
+        title: "Learn Git branching",
+        subTitle: "",
+        description: "Learn Git interactively",
+        image: `${envs.basePath}/images/learn-git-branching.png`,
+        href: "https://learngitbranching.js.org/",
+      },
     ],
     []
   );
