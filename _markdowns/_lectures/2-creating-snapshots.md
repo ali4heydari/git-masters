@@ -57,6 +57,44 @@ links: [5 Git Best Practices For Git Commit](https://www.perforce.com/blog/vcs/g
 ## Removing files
 
 1. `rm` vs `git rm`
+
+using `rm`:
+
+```bash
+$ rm pankod-icon.svg
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    pankod-icon.svg
+
+no changes added to commit (use "git add" and/or "git commit -a")
+$ git add pankod-icon.svg
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    pankod-icon.svg
+
+
+```
+
+using `git rm`:
+
+```bash
+$ git rm  pankod-icon.svg
+rm 'public/icons/pankod-icon.svg'
+
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    pankod-icon.svg
+
+
+```
+
 2. `git rm packages/*`
 3. `git rm --cached`: only remove from the index
 4. `git ls-files`
