@@ -49,4 +49,4 @@ GitHub profile README repository of some students:
 
 Attachments:
 [best profile readme's for your reference](https://github.com/durgeshsamariya/awesome-github-profile-readme-templates)
-[session video 📺](\fs\Technical\Imani)
+[session video 📺](\\\\192.168.100.14\Training Courses\git)
