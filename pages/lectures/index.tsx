@@ -43,7 +43,7 @@ const Lectures: React.FC<{ allLectures: Lecture[] }> = ({ allLectures }) => {
                       as={`/lectures/${lecture.slug}`}
                       href="/lectures/[slug]"
                     >
-                      <a className="text-red-500 inline-flex items-center mt-4">
+                      <a className="text-red-500 inline-flex items-center mt-4 hover:bg-red-50 rounded">
                         More
                         <svg
                           className="w-4 h-4 ml-2"
