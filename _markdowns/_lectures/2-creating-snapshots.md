@@ -12,6 +12,8 @@ tags: [lecture]
 
 ## Git workflow
 
+<figure style="text-align:center">
+
 ![Storing data as changes to a base version of each file](https://git-scm.com/book/en/v2/images/deltas.png "Storing data as changes to a base version of each file")
 
 <figcaption>Storing data as changes to a base version of each file</figcaption>
@@ -115,13 +117,29 @@ $ git add .gitignore
 > How can I make Git "forget" about a file that was tracked, but is now in .gitignore?
 >
 > > run command: `git rm --catched <file_or_directory_or_pattern>`
+> >
+> > Also you can add `.gitignore` and run the following command:
+> >
+> > `git rm --cached -r . && git add . && git commit -m "track files in right way"`
 
 ## Short status
 
 `git status -s`
 
 left column in output represents the staging aria
+
 right column in output represents the working directory
+
+```bash
+$ git status -s
+ M _markdowns/_lectures/2-creating-snapshots.md
+
+$ git add .
+
+$ git status -s
+M  _markdowns/_lectures/2-creating-snapshots.md
+
+```
 
 ## Viewing staged and unstaged changes
 
