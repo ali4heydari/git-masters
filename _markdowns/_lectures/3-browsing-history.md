@@ -1,12 +1,10 @@
 ---
 title: "Browsing history"
 excerpt: "Browsing history in git"
-coverImage: "/git-masters/images/git-cover.jpeg"
+coverImage: "/git-masters/images/git-log-output.png"
 releaseDate: "2021-10-18T16:00:00"
 author: "Ali Heydari"
-name: ""
-ogImage:
-url: "/git-masters/images/git-cover.jpeg"
+ogImage: "/git-masters/images/git-log-output.png"
 tags: [lecture]
 ---
 
