@@ -1,12 +1,10 @@
 ---
 title: "Creating snapshots"
 excerpt: "Creating snapshots with git commit"
-coverImage: "/git-masters/images/git-cover.jpeg"
+coverImage: "/git-masters/images/areas.png"
 releaseDate: "2021-10-11T18:15:00"
 author: "Ali Heydari"
-name: ""
-ogImage:
-url: "/git-masters/images/git-cover.jpeg"
+ogImage: "/git-masters/images/areas.png"
 tags: [lecture]
 ---
 
