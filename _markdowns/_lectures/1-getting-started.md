@@ -1,12 +1,8 @@
 ---
 title: "Getting started"
 excerpt: "What is Git and why we use it? start configuring Git and use for first time"
-coverImage: "/git-masters/images/git-cover.jpeg"
 releaseDate: "2021-10-09T04:45:00"
 author: "Ali Heydari"
-name: ""
-ogImage:
-url: "/git-masters/images/git-cover.jpeg"
 tags: [lecture]
 ---
 
