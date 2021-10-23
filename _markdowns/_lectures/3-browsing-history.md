@@ -53,7 +53,7 @@ filter by content:
 
 filter by paticular range:
 
-`git log --oneline SHA1..SHA1`
+`git log --oneline 7bdaa1d..a7608d6`
 
 filter all commits that modified paticular file:
 
@@ -68,7 +68,7 @@ filter all commits that modified paticular file:
 
 ## aliases
 
-1. `git config --global alias.lg "git log --pretty=format:'%Cgreen%an%Creset commited %Cred%h%Creset on %cd'"`
+1. `git config --global alias.lg "log --pretty=format:'%Cgreen%an%Creset commited %Cred%h%Creset on %cd'"`
 2. `git config --global alias.unstage "git restore --staged ."`
 
 ## viewing a commit
@@ -91,12 +91,12 @@ filter all commits that modified paticular file:
 ## finding bugs using bisect
 
 ```bash
-git bisec start
-git bisec bad
-git bisec good SHA1
+git bisect start
+git bisect bad
+git bisect good SHA1
 git log --oneline --all
 # ...
-git bisec reset
+git bisect reset
 ```
 
 ## finding contributors using shortlog
