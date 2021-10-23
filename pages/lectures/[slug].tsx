@@ -67,7 +67,14 @@ const LecturePage: React.FC<LecturePageProps> = ({
               <title>
                 {lecture.title} | {SITE_NAME}
               </title>
-              <meta property="og:image" content={lecture.coverImage} />
+              <meta
+                property="og:image"
+                content={
+                  lecture.ogImage ||
+                  lecture.coverImage ||
+                  `${router.basePath}/images/git-cover.jpeg`
+                }
+              />
             </Head>
             <section className="text-gray-600 body-font">
               <div className="container px-5 py-24 mx-auto flex flex-col">
@@ -77,7 +84,10 @@ const LecturePage: React.FC<LecturePageProps> = ({
                     <Image
                       alt="content"
                       className="object-cover object-center h-full w-full"
-                      src={lecture.coverImage}
+                      src={
+                        lecture.coverImage ||
+                        `${router.basePath}/images/git-cover.jpeg`
+                      }
                     />
                   </div>
                   <div className="flex flex-col sm:flex-row mt-10">
