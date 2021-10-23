@@ -9,6 +9,19 @@ import React from "react";
 import { basePath, googleAnalyticsCode, domain } from "../../../envs";
 
 export const Meta: React.FC = () => {
+  const prismThemes = [
+    "",
+    "coy",
+    "dark",
+    "funky",
+    "okaidia",
+    "solarizedlight",
+    "tomorrow",
+    "twilight",
+  ];
+
+  const theme = prismThemes[5];
+
   return (
     <Head>
       <link
@@ -111,36 +124,18 @@ export const Meta: React.FC = () => {
         name="msapplication-square310x310logo"
         content={`${basePath}/assets/favicon/mstile-310x310.png`}
       />
-
+      {prismThemes.map((theme) => (
+        <link
+          key={theme}
+          rel="preload"
+          href={`https://unpkg.com/prismjs@1.15.0/themes/prism-${theme}.css`}
+          as="script"
+        />
+      ))}
       <link
-        rel="preload"
-        href="https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css"
-        as="script"
-      />
-      <link
-        rel="preload"
-        href="https://unpkg.com/prismjs@0.0.1/themes/prism-coy.css"
-        as="script"
-      />
-      <link
-        rel="preload"
-        href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
-        as="script"
-      />
-      <link
-        rel="preload"
-        href="https://unpkg.com/prismjs@0.0.1/themes/prism-funky.css"
-        as="script"
-      />
-      <link
-        href={`https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css`}
+        href={`https://unpkg.com/prismjs@1.15.0/themes/prism-${theme}.css`}
         rel="stylesheet"
       />
-      {/* https://github.com/leerob/nextjs-prism-markdown */}
-      {/*<link*/}
-      {/*  href={`https://unpkg.com/prismjs@0.0.1/themes/prism-${theme}.css`}*/}
-      {/*  rel="stylesheet"*/}
-      {/*/>*/}
       <link
         rel="shortcut icon"
         href={`${basePath}/assets/favicon/favicon.ico`}
