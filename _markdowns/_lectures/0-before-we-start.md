@@ -1,12 +1,10 @@
 ---
-title: "Before We start"
+title: "Before we start"
 excerpt: "Start from here and join Teams learning channel"
-coverImage: "/git-masters/images/git-cover.jpeg"
+coverImage: "/git-masters/images/git-osx-installer.png"
 releaseDate: "2021-09-29T16:00:00"
 author: "Ali Heydari"
-name: ""
-ogImage:
-url: "/git-masters/images/git-cover.jpeg"
+ogImage: "/git-masters/images/git-osx-installer.png"
 tags: [announcements]
 ---
 
