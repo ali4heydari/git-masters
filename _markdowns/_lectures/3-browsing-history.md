@@ -113,7 +113,7 @@ git bisect reset
 
 ## restoring a deleting file
 
-```
+```bash
 git log --oneline -- DELETED_FILE
 git checkout SHA1 DELETED_FILE
 ```

@@ -15,7 +15,7 @@ Each student creates a repository with their username and introduces themselves 
 
 A command for add some optional unix tools to the PATH (windows only):
 
-```
+```bash
 prompt>set PATH=%PATH%;C:\Program Files\Git\usr\bin
 ```
 
