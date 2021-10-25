@@ -3,6 +3,7 @@ import { Layout } from "@components";
 import {
   ClockIcon,
   CollaborationIcon,
+  GitBranchIcon,
   RewriteTextIcon,
   SnapshotIcon,
   StartIcon,
@@ -70,6 +71,7 @@ const Syllabus: React.FC = (props) => {
       },
       {
         title: "Branching",
+        icon: <GitBranchIcon className="w-5 h-5" />,
         subs: [
           "introduction",
           "what are branches",
