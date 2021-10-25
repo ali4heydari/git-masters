@@ -20,6 +20,21 @@ const CourseMaterials: React.FC = (props) => {
         image: `${envs.basePath}/images/learn-git-branching.png`,
         href: "https://learngitbranching.js.org/",
       },
+      {
+        title: "Learn Git by Visualizing",
+        subTitle: "",
+        description: "Visualizing git",
+        image: `${envs.basePath}/images/visualizing-git.png`,
+        href: "https://git-school.github.io/visualizing-git/",
+      },
+      {
+        title: "Git command explorer",
+        subTitle: "",
+        description:
+          "Find the right git commands without digging through the web.",
+        image: `${envs.basePath}/images/git-explorer.png`,
+        href: "https://gitexplorer.com/",
+      },
     ],
     []
   );
