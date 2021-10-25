@@ -2,6 +2,7 @@ import React from "react";
 import { Layout } from "@components";
 import { Assignment, getAllAssignments } from "@lib/api";
 import Link from "next/link";
+import { DateTimeIcon } from "@components/icons";
 
 const Assignments: React.FC<{
   allAssignments: Assignment[];
@@ -43,7 +44,7 @@ const Assignments: React.FC<{
                     as={`/assignments/${it.slug}`}
                     href="/assignments/[slug]"
                   >
-                    <a className="text-red-500 inline-flex items-center">
+                    <a className="text-red-500 inline-flex items-center hover:bg-red-100 rounded p-1">
                       More
                       <svg
                         className="w-4 h-4 ml-2"
@@ -60,19 +61,10 @@ const Assignments: React.FC<{
                     </a>
                   </Link>
                   <span className="text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                    <svg
-                      className="w-4 h-4 mr-1"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      <circle cx={12} cy={12} r={3} />
-                    </svg>
-                    {it.dueDate}
+                    <DateTimeIcon className="w-4 h-4 mr-1" />
+                    {`${new Date(it.dueDate).toLocaleDateString()} - ${new Date(
+                      it.dueDate
+                    ).toLocaleTimeString()}`}
                   </span>
                   <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                     <svg
