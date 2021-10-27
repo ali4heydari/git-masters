@@ -5,7 +5,6 @@ import {
   TwitterIcon,
   YoutubeIcon,
   NextjsIcon,
-  PankodIcon,
 } from "@components/icons";
 
 export const SvgrExample: React.FC = () => {
@@ -16,7 +15,6 @@ export const SvgrExample: React.FC = () => {
       <TwitterIcon width={32} height={32} color="black" />
       <YoutubeIcon width={32} height={32} color="black" />
       <NextjsIcon width={96} height={58} color="black" />
-      <PankodIcon width={140} height={28} color="black" />
     </div>
   );
 };
