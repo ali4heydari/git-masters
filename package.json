@@ -30,7 +30,7 @@
     "axios": "^0.24.0",
     "date-fns": "^2.25.0",
     "disqus-react": "^1.1.2",
-    "github-markdown-css": "^4.0.0",
+    "github-markdown-css": "^5.0.0",
     "gray-matter": "^4.0.3",
     "next": "^12.0.1",
     "next-compose-plugins": "^2.2.1",
