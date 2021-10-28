@@ -19,7 +19,7 @@ const InnerImage = styled(NextImage)`
 
 // https://github.com/vercel/next.js/discussions/18739#discussioncomment-344932
 // https://stackoverflow.com/a/65134645/8777320
-export const Image: React.FC<ImageProps> = ({ className, ...props }) => {
+export const ImageBackup: React.FC<ImageProps> = ({ className, ...props }) => {
   return (
     <div className={className}>
       <ImageWrapper>
@@ -27,4 +27,11 @@ export const Image: React.FC<ImageProps> = ({ className, ...props }) => {
       </ImageWrapper>
     </div>
   );
+};
+
+// https://github.com/vercel/next.js/discussions/18739#discussioncomment-344932
+// https://stackoverflow.com/a/65134645/8777320
+export const Image: React.FC<ImageProps> = ({ className, ...props }) => {
+  // @ts-ignore
+  return <img className={className} {...props} />;
 };
