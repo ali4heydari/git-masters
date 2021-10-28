@@ -18,10 +18,11 @@
     }
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^11.1.2",
-    "@reduxjs/toolkit": "^1.6.2",
-    "axios": "^0.23.0",
-    "date-fns": "^2.25.0",
+    "@next/bundle-analyzer": "^11.1.0",
+    "@reduxjs/toolkit": "^1.6.1",
+    "@sentry/nextjs": "^6.13.3",
+    "axios": "^0.21.1",
+    "date-fns": "^2.23.0",
     "disqus-react": "^1.1.2",
     "github-markdown-css": "^4.0.0",
     "gray-matter": "^4.0.3",
