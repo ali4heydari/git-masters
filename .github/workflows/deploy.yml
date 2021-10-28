@@ -45,6 +45,7 @@ jobs:
           NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS_CODE }}
           NEXT_PUBLIC_HOTJAR_ID: ${{ secrets.HOTJAR_ID }}
           NEXT_PUBLIC_HOTJAR_SNIPPET_VERSION: ${{ secrets.HOTJAR_SNIPPET_VERSION }}
+          NEXT_PUBLIC_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
