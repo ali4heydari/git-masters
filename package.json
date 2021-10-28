@@ -18,6 +18,11 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "resolutions": {
+    "**/**/ansi-regex": "^5.0.1",
+    "**/**/nth-check": "^2.0.1",
+    "**/**/trim": "^0.0.3"
+  },
   "dependencies": {
     "@next/bundle-analyzer": "^12.0.1",
     "@reduxjs/toolkit": "^1.6.2",
