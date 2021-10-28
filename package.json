@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "build:analyze": "ANALYZE=true yarn build",
+    "build:analyze": "cross-env ANALYZE=true && yarn build",
     "dev": "next-remote-watch _markdowns",
     "export": "next export",
     "lint": "next lint",
@@ -60,6 +60,7 @@
     "@types/styled-components": "^5.1.15",
     "autoprefixer": "^10.3.7",
     "babel-plugin-styled-components": "^1.13.3",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "dotenv": "^10.0.0",
     "eslint": "<8.0.0",
