@@ -25,7 +25,10 @@ const Lectures: React.FC<{ allLectures: Lecture[] }> = ({ allLectures }) => {
                   <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                     <span className="font-semibold title-font text-gray-700">
                       {lecture.tags?.map((tag) => (
-                        <span className="ml-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-red-200 text-red-700 rounded-full">
+                        <span
+                          key={tag}
+                          className="ml-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-red-200 text-red-700 rounded-full"
+                        >
                           {tag}
                         </span>
                       ))}

@@ -39,7 +39,7 @@ const Schedule: React.FC<{
               </thead>
               <tbody>
                 {allEvents.map((event) => (
-                  <tr>
+                  <tr key={event.title}>
                     <td className="border-t-2 border-gray-200 px-4 py-3">
                       {event?.type}
                     </td>

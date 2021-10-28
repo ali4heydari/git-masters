@@ -18,9 +18,10 @@ export const Main: React.FC = () => {
             Now is the moment to learn Git
           </h1>
           <p className="mb-8 leading-relaxed">
-            Git is the world's most popular Version Control System (VCS), It
-            allows you to keep track of your development's history, reverse your
-            code in case of a failure, and collaborate successfully with others.
+            Git is the world&apos;s most popular Version Control System (VCS),
+            It allows you to keep track of your development&apos;s history,
+            reverse your code in case of a failure, and collaborate successfully
+            with others.
           </p>
           <div className="flex justify-center">
             <Link href="/syllabus">
