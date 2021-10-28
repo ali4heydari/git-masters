@@ -5,7 +5,7 @@
   "scripts": {
     "build": "next build",
     "build:analyze": "ANALYZE=true yarn build",
-    "dev": "next dev",
+    "dev": "next-remote-watch _markdowns",
     "export": "next export",
     "lint": "next lint",
     "prepare": "husky install",
@@ -30,6 +30,7 @@
     "next": "^12.0.1",
     "next-compose-plugins": "^2.2.1",
     "next-i18next": "^8.9.0",
+    "next-remote-watch": "^1.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hotjar": "^4.0.0",
