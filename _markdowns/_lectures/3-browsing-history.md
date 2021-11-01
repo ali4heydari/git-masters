@@ -67,7 +67,7 @@ filter all commits that modified paticular file:
 ## aliases
 
 1. `git config --global alias.lg "log --pretty=format:'%Cgreen%an%Creset commited %Cred%h%Creset on %cd'"`
-2. `git config --global alias.unstage "git restore --staged ."`
+2. `git config --global alias.unstage "restore --staged ."`
 
 ## viewing a commit
 
