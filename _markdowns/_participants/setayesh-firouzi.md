@@ -1,5 +1,6 @@
 ---
-firstName: "setayesh"
-lastName: "firouzi"
+
+firstName: "Setayesh"
+lastName: "Firouzi"
 githubUserName: "sfirouzi"
 twitterUserName: ""
