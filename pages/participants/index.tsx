@@ -18,12 +18,9 @@ const Participants: React.FC<{ allParticipants: Participant[] }> = (props) => {
             </p>
           </div>
           <div className="flex flex-wrap -m-2">
-            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-              {allParticipants.map((it) => (
-                <Link
-                  key={JSON.stringify(it)}
-                  href={`https://github.com/${it.githubUserName}`}
-                >
+            {allParticipants.map((it, index) => (
+              <div key={index} className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <Link href={`https://github.com/${it.githubUserName}`}>
                   <a className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                     <img
                       alt="team"
@@ -58,8 +55,8 @@ const Participants: React.FC<{ allParticipants: Participant[] }> = (props) => {
                     </div>
                   </a>
                 </Link>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
