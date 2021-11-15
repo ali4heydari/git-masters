@@ -1,8 +1,8 @@
 ---
-title: "COLLABORATION"
+title: "Collaboration"
 excerpt: "Collaboration with team in git"
 coverImage: "/git-masters/images/managed-team-1.png"
-releaseDate: "2021-10-25T16:00:00"
+releaseDate: "2021-11-01T16:00:00"
 author: "Ali Heydari"
 ogImage: "/git-masters/images/managed-team-1.png"
 tags: [lecture]
@@ -27,10 +27,8 @@ tags: [lecture]
 
 ## pulling
 
-pull = fetch + merge
-
-1. `git pull origin master`
-2. `git pull --rebase` ⚠⚠⚠
+1. pull = fetch + merge: `git pull origin master`
+2. pull = fetch + rebase: `git pull --rebase` ⚠⚠⚠
 
 ## switching to remote branch
 
