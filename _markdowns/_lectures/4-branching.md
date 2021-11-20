@@ -89,21 +89,4 @@ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 
 1. `git reset --hard HEAD~1`
 2. `git revert HEAD`
-3. ++`git revert -m 1 HEAD`
-
-## squash merging
-
-1. `git merge --squash bugfix/signup`
-2. `git commit -m "[meaningfull message that represent all changes in bugfix/signup]"`
-3. `git merge --no-merged`
-4. `git branch -D bugfix/signup`
-
-## cherry picking
-
-1. `git cherry-pick <commit-sha>`
-2. `git restore --source=ali/feat/dark-theme -- src/_app.ts`
-
-## rebasing
-
-1. in target branch run: `git rebase other-branch`
-2. in case of conflict use: `git rebase --continue|--skip|--abort`
+3. `git revert -m 1 HEAD`
