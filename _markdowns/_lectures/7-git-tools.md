@@ -352,3 +352,8 @@ An emoji guide for your commit messages
 ```shell
 npm i -g gitmoji-cli
 ```
+
+---
+
+Attachments:
+[session video 📺](\\\\192.168.100.14\Training Courses\git)

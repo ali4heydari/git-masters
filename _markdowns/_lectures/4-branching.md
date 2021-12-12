@@ -90,3 +90,8 @@ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 1. `git reset --hard HEAD~1`
 2. `git revert HEAD`
 3. `git revert -m 1 HEAD`
+
+---
+
+Attachments:
+[session video 📺](\\\\192.168.100.14\Training Courses\git)

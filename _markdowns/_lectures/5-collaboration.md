@@ -57,3 +57,8 @@ tags: [lecture]
 3. `git remote set-url upstream <new_repository_url>`
 4. `git remote rename upstream base`
 5. `git remote remove base`
+
+---
+
+Attachments:
+[session video 📺](\\\\192.168.100.14\Training Courses\git)
