@@ -11,52 +11,72 @@ export function WhyGit() {
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p className="text-lg">
                 Git is the industry-standard version control system used by over{" "}
-                <strong className="text-foreground">90% of developers worldwide</strong>. Whether you're working solo or
-                on a team, Git skills are essential.
+                <strong className="text-foreground">90% of developers worldwide</strong>. Whether
+                you're working solo or on a team, Git skills are essential.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-3">
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary mt-0.5">
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <div>
-                    <strong className="text-foreground">Never lose work again</strong> - Track every change and revert
-                    to any previous version instantly
+                    <strong className="text-foreground">Never lose work again</strong> - Track every
+                    change and revert to any previous version instantly
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary mt-0.5">
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <div>
-                    <strong className="text-foreground">Collaborate seamlessly</strong> - Work with teams of any size
-                    without stepping on each other's toes
+                    <strong className="text-foreground">Collaborate seamlessly</strong> - Work with
+                    teams of any size without stepping on each other's toes
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary mt-0.5">
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <div>
-                    <strong className="text-foreground">Boost your employability</strong> - Git proficiency is a
-                    must-have skill in every developer job posting
+                    <strong className="text-foreground">Boost your employability</strong> - Git
+                    proficiency is a must-have skill in every developer job posting
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary mt-0.5">
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <div>
-                    <strong className="text-foreground">Contribute to open source</strong> - Join the global developer
-                    community and build your portfolio
+                    <strong className="text-foreground">Contribute to open source</strong> - Join
+                    the global developer community and build your portfolio
                   </div>
                 </div>
               </div>
@@ -102,5 +122,5 @@ export function WhyGit() {
         </div>
       </div>
     </section>
-  )
+  );
 }

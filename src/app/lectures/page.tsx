@@ -1,13 +1,13 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import { getAllLectures } from "@/lib/markdown"
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { getAllLectures } from "@/lib/markdown";
 
 export default async function LecturesPage() {
-  const lectures = await getAllLectures()
+  const lectures = await getAllLectures();
 
   return (
     <div className="min-h-screen bg-background">
@@ -17,9 +17,12 @@ export default async function LecturesPage() {
       <section className="border-b border-border bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Lectures</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              Lectures
+            </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Comprehensive video lectures and written materials covering all aspects of Git version control
+              Comprehensive video lectures and written materials covering all aspects of Git version
+              control
             </p>
           </div>
         </div>
@@ -34,14 +37,18 @@ export default async function LecturesPage() {
                 {/* Left side - Badge and date */}
                 <div className="flex sm:flex-col items-center sm:items-start gap-3 sm:gap-2 sm:w-32 shrink-0">
                   <Badge
-                    variant={lecture.frontmatter.tags?.includes("announcements") ? "secondary" : "default"}
+                    variant={
+                      lecture.frontmatter.tags?.includes("announcements") ? "secondary" : "default"
+                    }
                     className={
                       lecture.frontmatter.tags?.includes("announcements")
                         ? "bg-secondary text-secondary-foreground"
                         : "bg-primary/10 text-primary hover:bg-primary/20"
                     }
                   >
-                    {lecture.frontmatter.tags?.includes("announcements") ? "ANNOUNCEMENT" : "LECTURE"}
+                    {lecture.frontmatter.tags?.includes("announcements")
+                      ? "ANNOUNCEMENT"
+                      : "LECTURE"}
                   </Badge>
                   <p className="text-sm text-muted-foreground">
                     {new Date(lecture.frontmatter.releaseDate).toLocaleDateString("en-US", {
@@ -72,5 +79,5 @@ export default async function LecturesPage() {
 
       <Footer />
     </div>
-  )
+  );
 }

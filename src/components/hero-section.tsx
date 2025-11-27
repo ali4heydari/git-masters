@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -13,11 +13,6 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Badge */}
-          <Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm font-medium">
-            100% Free Workshop
-          </Badge>
-
           {/* Main Headline */}
           <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl mb-6">
             Master Git & Collaborate Like a Pro
@@ -25,8 +20,8 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-pretty text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Learn the essential version control skills that every developer needs. Track changes, collaborate
-            seamlessly, and never lose code again.
+            Learn the essential version control skills that every developer needs. Track changes,
+            collaborate seamlessly, and never lose code again.
           </p>
 
           {/* CTA Buttons */}
@@ -34,7 +29,12 @@ export function HeroSection() {
             <Button size="lg" className="text-base px-8 h-12 min-w-[200px]">
               <Link href="/syllabus">View Syllabus</Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-base px-8 h-12 min-w-[200px] bg-transparent" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-base px-8 h-12 min-w-[200px] bg-transparent"
+              asChild
+            >
               <Link href="/lectures">Lectures</Link>
             </Button>
           </div>
@@ -57,5 +57,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

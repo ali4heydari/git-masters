@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -24,7 +24,9 @@ export function Footer() {
               </div>
               <span className="text-lg font-bold">Git Masters</span>
             </div>
-            <p className="text-sm text-muted-foreground">Master Git and collaborate like a professional developer.</p>
+            <p className="text-sm text-muted-foreground">
+              Master Git and collaborate like a professional developer.
+            </p>
           </div>
 
           {/* Course */}
@@ -106,7 +108,10 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@gitmasters.ir" className="hover:text-foreground transition-colors">
+                <a
+                  href="mailto:hello@gitmasters.ir"
+                  className="hover:text-foreground transition-colors"
+                >
                   Email
                 </a>
               </li>
@@ -128,5 +133,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

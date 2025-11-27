@@ -1,7 +1,7 @@
-import {Navigation} from "@/components/navigation"
-import {Footer} from "@/components/footer"
-import {Card, CardContent} from "@/components/ui/card"
-import {Badge} from "@/components/ui/badge"
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const scheduleItems = [
   {
@@ -76,21 +76,23 @@ const scheduleItems = [
       },
     ],
   },
-]
+];
 
 export default function SchedulePage() {
   return (
     <div className="min-h-screen">
-      <Navigation/>
+      <Navigation />
       <main>
         {/* Hero Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-b from-background to-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Workshop Schedule</h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                Workshop Schedule
+              </h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                A structured 4-week journey from Git basics to advanced collaboration techniques. All sessions are live
-                and interactive.
+                A structured 4-week journey from Git basics to advanced collaboration techniques.
+                All sessions are live and interactive.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
@@ -139,14 +141,13 @@ export default function SchedulePage() {
                 <div key={index} className="relative">
                   {/* Timeline Line */}
                   {index !== scheduleItems.length - 1 && (
-                    <div className="absolute left-6 top-24 bottom-0 w-0.5 bg-border hidden sm:block"/>
+                    <div className="absolute left-6 top-24 bottom-0 w-0.5 bg-border hidden sm:block" />
                   )}
 
                   <div className="mb-12">
                     {/* Week Header */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-lg relative z-10">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-lg relative z-10">
                         {item.week}
                       </div>
                       <div>
@@ -173,7 +174,12 @@ export default function SchedulePage() {
                                     {session.type}
                                   </Badge>
                                   <span className="text-sm text-muted-foreground flex items-center gap-1">
-                                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg
+                                      className="h-4 w-4"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
                                       <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -185,7 +191,9 @@ export default function SchedulePage() {
                                   </span>
                                 </div>
                                 <h4 className="text-lg font-semibold mb-2">{session.title}</h4>
-                                <p className="text-sm text-muted-foreground leading-relaxed">{session.description}</p>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                  {session.description}
+                                </p>
                               </div>
                             </div>
                           </CardContent>
@@ -208,9 +216,13 @@ export default function SchedulePage() {
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -222,8 +234,8 @@ export default function SchedulePage() {
                       <div>
                         <h3 className="font-semibold text-lg mb-2">Session Times</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Live sessions are held twice weekly. Recordings available for all enrolled students. Times
-                          displayed in your local timezone.
+                          Live sessions are held twice weekly. Recordings available for all enrolled
+                          students. Times displayed in your local timezone.
                         </p>
                       </div>
                     </div>
@@ -233,9 +245,13 @@ export default function SchedulePage() {
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -247,8 +263,8 @@ export default function SchedulePage() {
                       <div>
                         <h3 className="font-semibold text-lg mb-2">Assignments</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Hands-on assignments help reinforce concepts. Complete at your own pace with instructor
-                          feedback and support.
+                          Hands-on assignments help reinforce concepts. Complete at your own pace
+                          with instructor feedback and support.
                         </p>
                       </div>
                     </div>
@@ -258,9 +274,13 @@ export default function SchedulePage() {
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -272,8 +292,8 @@ export default function SchedulePage() {
                       <div>
                         <h3 className="font-semibold text-lg mb-2">Interactive Learning</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Ask questions during live sessions, participate in discussions, and collaborate with fellow
-                          learners.
+                          Ask questions during live sessions, participate in discussions, and
+                          collaborate with fellow learners.
                         </p>
                       </div>
                     </div>
@@ -283,9 +303,13 @@ export default function SchedulePage() {
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -297,8 +321,8 @@ export default function SchedulePage() {
                       <div>
                         <h3 className="font-semibold text-lg mb-2">Lifetime Access</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Access all course materials, recordings, and resources forever. Learn at your own pace, even
-                          after the workshop ends.
+                          Access all course materials, recordings, and resources forever. Learn at
+                          your own pace, even after the workshop ends.
                         </p>
                       </div>
                     </div>
@@ -308,9 +332,8 @@ export default function SchedulePage() {
             </div>
           </div>
         </section>
-
       </main>
-      <Footer/>
+      <Footer />
     </div>
-  )
+  );
 }

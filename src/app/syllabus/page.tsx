@@ -17,8 +17,8 @@ const modules = [
       "Understanding what Git is",
       "Installing and configuring Git",
       "Setting up your first repository",
-      "Basic Git workflow overview"
-    ]
+      "Basic Git workflow overview",
+    ],
   },
   {
     number: 2,
@@ -35,8 +35,8 @@ const modules = [
       "Stashing work in progress",
       "Removing and renaming files",
       "Viewing changes and diffs",
-      "Restoring files to previous versions"
-    ]
+      "Restoring files to previous versions",
+    ],
   },
   {
     number: 3,
@@ -51,8 +51,8 @@ const modules = [
       "Viewing commit details",
       "Comparing commits and branches",
       "Understanding the reflog",
-      "Recovering lost commits"
-    ]
+      "Recovering lost commits",
+    ],
   },
   {
     number: 4,
@@ -69,8 +69,8 @@ const modules = [
       "Aborting and undoing merges",
       "Branch management strategies",
       "Deleting and renaming branches",
-      "Viewing merged and unmerged branches"
-    ]
+      "Viewing merged and unmerged branches",
+    ],
   },
   {
     number: 5,
@@ -85,8 +85,8 @@ const modules = [
       "Managing remote branches",
       "Tracking branches",
       "Handling push conflicts",
-      "Working with multiple remotes"
-    ]
+      "Working with multiple remotes",
+    ],
   },
   {
     number: 6,
@@ -103,8 +103,8 @@ const modules = [
       "Cherry-picking commits",
       "Dropping commits",
       "Editing commit messages",
-      "The golden rule of rewriting history"
-    ]
+      "The golden rule of rewriting history",
+    ],
   },
   {
     number: 7,
@@ -118,9 +118,9 @@ const modules = [
       "Husky for Git hooks",
       "Conventional commits",
       "Semantic versioning",
-      "Git aliases and shortcuts"
-    ]
-  }
+      "Git aliases and shortcuts",
+    ],
+  },
 ];
 
 const resources = [
@@ -129,29 +129,29 @@ const resources = [
     description: "The comprehensive official Git book, available free online",
     image: "/images/pro-git.jpg",
     type: "Book",
-    url: "https://git-scm.com/book/en/v2"
+    url: "https://git-scm.com/book/en/v2",
   },
   {
     title: "Learn Git Branching",
     description: "Interactive visual tutorial for mastering Git branching",
     image: "/images/learn-git-branching.png",
     type: "Interactive",
-    url: "https://learngitbranching.js.org/"
+    url: "https://learngitbranching.js.org/",
   },
   {
     title: "Git Visualization Tool",
     description: "Visualize Git operations and understand complex workflows",
     image: "/images/visualizing-git.png",
     type: "Tool",
-    url: "https://git-school.github.io/visualizing-git/"
+    url: "https://git-school.github.io/visualizing-git/",
   },
   {
     title: "Git explorer",
     description: "An interactive Git command explorer to learn and practice Git commands",
     image: "/images/git-explorer.png",
     type: "Interactive",
-    url: "https://git.gaozih.com/"
-  }
+    url: "https://git.gaozih.com/",
+  },
 ];
 
 export default function SyllabusPage() {
@@ -167,8 +167,8 @@ export default function SyllabusPage() {
                 Complete Course Syllabus
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                7 comprehensive modules taking you from Git beginner to professional collaborator. Master version
-                control with hands-on practice and real-world workflows.
+                7 comprehensive modules taking you from Git beginner to professional collaborator.
+                Master version control with hands-on practice and real-world workflows.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
@@ -218,8 +218,7 @@ export default function SyllabusPage() {
                   <CardContent className="p-6 sm:p-8">
                     <div className="flex items-start gap-4 sm:gap-6">
                       {/* Module Icon */}
-                      <div
-                        className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-3xl sm:text-4xl">
+                      <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-3xl sm:text-4xl">
                         {module.icon}
                       </div>
 
@@ -231,7 +230,9 @@ export default function SyllabusPage() {
                           </Badge>
                         </div>
                         <h3 className="text-2xl sm:text-3xl font-bold mb-2">{module.title}</h3>
-                        <p className="text-muted-foreground mb-6 leading-relaxed">{module.description}</p>
+                        <p className="text-muted-foreground mb-6 leading-relaxed">
+                          {module.description}
+                        </p>
 
                         {/* Topics List */}
                         <div className="grid sm:grid-cols-2 gap-3">
@@ -243,7 +244,12 @@ export default function SyllabusPage() {
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
                               >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M5 13l4 4L19 7"
+                                />
                               </svg>
                               <span className="text-sm text-foreground/90">{topic}</span>
                             </div>
@@ -262,7 +268,9 @@ export default function SyllabusPage() {
         <section className="py-16 sm:py-20 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Learning Resources</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+                Learning Resources
+              </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Curated materials to support your learning journey
               </p>
@@ -270,12 +278,18 @@ export default function SyllabusPage() {
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {resources.map((resource, index) => (
-                <Card key={index} className="overflow-hidden hover:border-primary/50 transition-colors">
-
-
+                <Card
+                  key={index}
+                  className="overflow-hidden hover:border-primary/50 transition-colors"
+                >
                   <div className="aspect-video bg-muted relative">
-                    <Image src={resource.image} alt={resource.title} width={400} height={225}
-                           className="object-cover h-64" />
+                    <Image
+                      src={resource.image}
+                      alt={resource.title}
+                      width={400}
+                      height={225}
+                      className="object-cover h-64"
+                    />
                   </div>
                   <CardContent className="p-6">
                     <Badge variant="secondary" className="mb-3">
@@ -283,8 +297,12 @@ export default function SyllabusPage() {
                     </Badge>
                     <h3 className="font-semibold text-lg mb-2">{resource.title}</h3>
                     <p className="text-sm text-muted-foreground">{resource.description}</p>
-                    <Link href={resource.url} target="_blank" rel="noopener noreferrer"
-                          className="mt-4 inline-block text-primary font-medium hover:underline">
+                    <Link
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block text-primary font-medium hover:underline"
+                    >
                       Explore Resource &rarr;
                     </Link>
                   </CardContent>
@@ -297,12 +315,12 @@ export default function SyllabusPage() {
         {/* CTA Section */}
         <section className="py-16 sm:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Card
-              className="max-w-3xl mx-auto border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
+            <Card className="max-w-3xl mx-auto border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
               <CardContent className="p-8 sm:p-12 text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Master Git?</h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  View the full lecture series and start your journey to becoming a Git expert. It's completely free!
+                  View the full lecture series and start your journey to becoming a Git expert. It's
+                  completely free!
                 </p>
                 <Button size="lg" className="text-base px-8 h-12 min-w-[200px]">
                   <Link href="/lectures">Lectures</Link>

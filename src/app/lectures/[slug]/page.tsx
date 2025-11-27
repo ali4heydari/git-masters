@@ -1,31 +1,31 @@
-import {Navigation} from "@/components/navigation"
-import {Footer} from "@/components/footer"
-import {Card} from "@/components/ui/card"
-import {notFound} from "next/navigation"
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { Card } from "@/components/ui/card";
+import { notFound } from "next/navigation";
 import { getItemBySlug, getSlugs, lecturesDirectory } from "@/lib/markdown";
-import Image from "next/image"
+import Image from "next/image";
 
 export async function generateStaticParams() {
-  const slugs = getSlugs(lecturesDirectory)
-  return slugs.map((slug) => ({slug}))
+  const slugs = getSlugs(lecturesDirectory);
+  return slugs.map((slug) => ({ slug }));
 }
 
-export default async function LecturePage({params}: { params: { slug: string } }) {
-  const lecture = await getItemBySlug(lecturesDirectory, params.slug)
+export default async function LecturePage({ params }: { params: { slug: string } }) {
+  const lecture = await getItemBySlug(lecturesDirectory, params.slug);
 
   if (!lecture) {
-    notFound()
+    notFound();
   }
 
-  const {frontmatter, contentHtml} = lecture
+  const { frontmatter, contentHtml } = lecture;
 
   console.log({
-    lecture
-  })
+    lecture,
+  });
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation/>
+      <Navigation />
 
       {/* Hero Section with Cover Image */}
       {frontmatter.coverImage && (
@@ -37,7 +37,7 @@ export default async function LecturePage({params}: { params: { slug: string } }
                   src={frontmatter.coverImage}
                   alt={frontmatter.title}
                   fill
-                  style={{objectFit: "cover"}}
+                  style={{ objectFit: "cover" }}
                   className="rounded-lg"
                 />
               </div>
@@ -91,7 +91,7 @@ export default async function LecturePage({params}: { params: { slug: string } }
         </div>
       </section>
 
-      <Footer/>
+      <Footer />
     </div>
-  )
+  );
 }

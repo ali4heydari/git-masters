@@ -1,16 +1,16 @@
-import type {NextConfig} from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
     remotePatterns: [
       {
-        hostname: "github.com"
-      }
-    ]
+        hostname: "github.com",
+      },
+    ],
   },
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
 // Merge MDX config with Next.js config
-export default nextConfig
+export default nextConfig;
