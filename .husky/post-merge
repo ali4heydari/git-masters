@@ -1,0 +1,7 @@
+changed() {
+  git diff --name-only HEAD@{1} HEAD | grep "^$1" > /dev/null 2>&1
+}
+
+if changed 'pnpm-lock.yaml'; then
+  echo "📦 pnpm-lock.yaml changed. Run pnpm i to bring your dependencies up to date."
+fi
