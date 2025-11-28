@@ -34,17 +34,17 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Course</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <Link href="#syllabus" className="hover:text-foreground transition-colors">
+                <Link href="/syllabus" className="hover:text-foreground transition-colors">
                   Syllabus
                 </Link>
               </li>
               <li>
-                <Link href="#schedule" className="hover:text-foreground transition-colors">
+                <Link href="/schedule" className="hover:text-foreground transition-colors">
                   Schedule
                 </Link>
               </li>
               <li>
-                <Link href="#lectures" className="hover:text-foreground transition-colors">
+                <Link href="/lectures" className="hover:text-foreground transition-colors">
                   Lectures
                 </Link>
               </li>
@@ -90,7 +90,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>
-            © 2025 Git Masters — {" "}
+            © 2025 Git Masters —{" "}
             <Link
               href="https://ali4heydari.tech/?ref=gitmasters"
               target="_blank"
