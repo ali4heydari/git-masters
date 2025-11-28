@@ -48,38 +48,6 @@ export function Footer() {
                   Lectures
                 </Link>
               </li>
-              <li>
-                <Link href="#assignments" className="hover:text-foreground transition-colors">
-                  Assignments
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <Link href="#materials" className="hover:text-foreground transition-colors">
-                  Course Materials
-                </Link>
-              </li>
-              <li>
-                <Link href="#faq" className="hover:text-foreground transition-colors">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="#support" className="hover:text-foreground transition-colors">
-                  Support
-                </Link>
-              </li>
-              <li>
-                <Link href="#community" className="hover:text-foreground transition-colors">
-                  Community
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -89,12 +57,12 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <a
-                  href="https://twitter.com/Ali4Heydari"
+                  href="https://x.com/Ali4Heydari"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors"
                 >
-                  Twitter
+                  X (Formerly Twitter)
                 </a>
               </li>
               <li>
@@ -121,15 +89,16 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2025 Git Masters — @Ali4Heydari</p>
-          <div className="flex gap-6">
-            <Link href="#privacy" className="hover:text-foreground transition-colors">
-              Privacy
+          <p>
+            © 2025 Git Masters — {" "}
+            <Link
+              href="https://ali4heydari.tech/?ref=gitmasters"
+              target="_blank"
+              className="hover:text-foreground transition-colors text-primary"
+            >
+              Ali Heydari
             </Link>
-            <Link href="#terms" className="hover:text-foreground transition-colors">
-              Terms
-            </Link>
-          </div>
+          </p>
         </div>
       </div>
     </footer>
