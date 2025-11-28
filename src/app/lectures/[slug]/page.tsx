@@ -10,8 +10,8 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function LecturePage({ params }: { params: { slug: string } }) {
-  const lecture = await getItemBySlug(lecturesDirectory, params.slug);
+export default async function LecturePage(props: { params: Promise<{ slug: string }> }) {
+  const lecture = await getItemBySlug(lecturesDirectory, (await props.params).slug);
 
   if (!lecture) {
     notFound();
