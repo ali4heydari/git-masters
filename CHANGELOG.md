@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1](///compare/v1.0.0...v1.0.1) (2025-11-28)
+
+### Bug Fixes
+
+- **page:** update LecturePage to handle params as a Promise f6d6c95
+
 ## 1.0.0 (2025-11-28)
 
 ### Features
