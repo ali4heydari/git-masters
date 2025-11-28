@@ -109,3 +109,8 @@ tags: [lecture]
 6. make other changes
 7. add other changes to staging area
 8. commit
+
+---
+
+Attachments:
+[session video 📺](\\\\192.168.100.14\Training Courses\git)
