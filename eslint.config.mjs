@@ -35,7 +35,7 @@ const typescriptESLintStrictConfig = typescriptESLint.configs.strict.find(
   DO NOT CHANGE THIS CONFIGURATION, UNLESS YOU KNOW WHAT YOU'RE DOING.
   USE customConfig FOR CUSTOMIZATIONS.
  */
-const defaultConfig = typescriptESLint.config(
+const defaultConfig = defineConfig(
   /*
     Ignore files and directories that aren't needed for the project.
     This rule ignores all files and directories that are in the `.gitignore`
@@ -238,10 +238,10 @@ const defaultConfig = typescriptESLint.config(
 
   Usually these rules are temporary and should be removed in the future after fixes.
  */
-const customConfig = typescriptESLint.config(
+const customConfig = defineConfig(
   {
     name: 'git-masters/custom/ignore',
-    ignores: ['**/tailwind-theme.js', 'next-env.d.ts'],
+    ignores: [ 'next-env.d.ts'],
   },
   {
     name: 'git-masters/custom/typescript',
@@ -269,7 +269,18 @@ const customConfig = typescriptESLint.config(
     rules: {
       'react-hooks/exhaustive-deps': 'off',
     },
-  }
+  },
+  {
+    name: 'git-masters/default/to-be-fixed',
+    files: ['**/*.ts', '**/*.tsx'],
+    ignores: ['**/__tests__/**/*.test.ts', '**/__tests__/**/*test.tsx'],
+    rules: {
+      'react/no-unescaped-entities': 'off',
+      'jsx-a11y/anchor-has-content': 'off',
+      'jsx-a11y/click-events-have-key-events': 'off',
+      'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    }
+  },
 );
 
 export default defineConfig(

@@ -1,9 +1,9 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
+import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
+import type React from "react";
+import { Analytics } from "@vercel/analytics/next";
+
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "Free comprehensive Git workshop. Learn version control, collaboration, and professional development workflows.",
 };
 
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,8 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <Suspense fallback={null}>{children}</Suspense>
+      <body className={`font-sans ${roboto.className}  antialiased`}>
+        <Suspense
+          fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}
+        >
+          {children}
+        </Suspense>
         <Analytics />
       </body>
     </html>

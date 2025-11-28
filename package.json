@@ -2,6 +2,7 @@
   "name": "git-masters",
   "version": "0.1.0",
   "private": true,
+  "types": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -12,6 +13,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@next/font": "^14.2.15",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",
     "@radix-ui/react-aspect-ratio": "1.1.1",
@@ -39,6 +41,7 @@
     "@radix-ui/react-toggle": "1.1.1",
     "@radix-ui/react-toggle-group": "1.1.1",
     "@radix-ui/react-tooltip": "1.1.6",
+    "@sentry/nextjs": "^10.27.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/mdx": "^2.0.13",
     "@vercel/analytics": "latest",
@@ -76,6 +79,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.1",
     "eslint-plugin-jest": "^29.2.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",

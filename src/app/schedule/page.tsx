@@ -1,7 +1,7 @@
-import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { Card, CardContent } from "@/components/ui/card";
+import { Navigation } from "@/components/navigation";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 const scheduleItems = [
   {

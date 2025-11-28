@@ -1,9 +1,9 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
-import { Card } from "@/components/ui/card";
-import { notFound } from "next/navigation";
-import { getItemBySlug, getSlugs, lecturesDirectory } from "@/lib/markdown";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { Footer } from "@/components/footer";
+import { Navigation } from "@/components/navigation";
+import { Card } from "@/components/ui/card";
+import { getItemBySlug, getSlugs, lecturesDirectory } from "@/lib/markdown";
 
 export async function generateStaticParams() {
   const slugs = getSlugs(lecturesDirectory);
@@ -18,10 +18,6 @@ export default async function LecturePage({ params }: { params: { slug: string }
   }
 
   const { frontmatter, contentHtml } = lecture;
-
-  console.log({
-    lecture,
-  });
 
   return (
     <div className="min-h-screen bg-background">

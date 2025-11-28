@@ -1,9 +1,9 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Footer } from "@/components/footer";
+import { Navigation } from "@/components/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { getAllLectures } from "@/lib/markdown";
 
 export default async function LecturesPage() {

@@ -1,8 +1,8 @@
+import Link from "next/link";
+import { Footer } from "@/components/footer";
+import { Navigation } from "@/components/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import Link from "next/link";
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { getAllContributors } from "@/lib/markdown";
 
 export default async function ContributorsPage() {
@@ -183,9 +183,7 @@ export default async function ContributorsPage() {
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
                   <img
-                    src={
-                      `https://github.com/${contributor.githubUserName}.png` || "/placeholder.svg"
-                    }
+                    src={`https://github.com/${contributor.githubUserName}.png`}
                     alt={`${contributor.firstName} ${contributor.lastName}`}
                     className="h-16 w-16 rounded-full border-2 border-border"
                   />
