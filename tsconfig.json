@@ -1,43 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "target": "ES6",
     "skipLibCheck": true,
-    "checkJs": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@components": ["src/components"],
-      "@public/*": ["public/*"],
-      "@public": ["public"],
-      "@definitions/*": ["src/definitions/*"],
-      "@definitions": ["src/definitions"],
-      "@interfaces/*": ["src/interfaces/*"],
-      "@interfaces": ["src/interfaces"],
-      "@styles/*": ["src/styles/*"],
-      "@styles": ["src/styles"],
-      "@lib": ["src/lib"],
-      "@lib/*": ["src/lib/*"],
-      "@components/icons/*": ["src/components/icons/*"],
-      "@components/icons": ["src/components/icons"],
-      "@redux/*": ["src/redux/*"],
-      "@redux": ["src/redux"],
-      "@i18n": ["./i18n"],
-      "@test/*": ["test/*"],
-      "@test": ["test"]
-    },
-    "incremental": true
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "test/*"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".release-it.ts"],
+  "exclude": ["node_modules"]
 }
